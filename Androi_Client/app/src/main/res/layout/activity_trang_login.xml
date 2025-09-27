@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    tools:context=".Trang_Dang_Ky">
+    tools:context=".Trang_Login">
 
-    <!-- Header có hình -->
+    <!-- Hình nền + logo -->
     <ImageView
         android:id="@+id/imgHeader"
-        android:layout_width="410dp"
-        android:layout_height="242dp"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@drawable/img_pagelogin"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Logo cam -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="80dp"
@@ -29,21 +28,21 @@
         app:layout_constraintTop_toBottomOf="@id/imgHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="-40dp" />
+        android:layout_marginTop="-40dp"/>
 
-    <!-- Tiêu đề "Đăng ký" -->
+    <!-- Tiêu đề -->
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đăng ký"
+        android:text="Đăng nhập"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/imgLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"/>
 
     <!-- Ô nhập Email -->
     <com.google.android.material.textfield.TextInputLayout
@@ -61,18 +60,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:paddingStart="40dp" />
+            android:paddingStart="40dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Ô nhập mật khẩu -->
+
+    <!-- Ô nhập Password -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutPassword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -89,51 +89,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:paddingStart="40dp" />
+            android:paddingStart="40dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Ô xác nhận mật khẩu -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutConfirmPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Xác nhận mật khẩu"
-        app:startIconDrawable="@drawable/ic_lock"
-        app:endIconMode="password_toggle"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp"
-        app:layout_constraintTop_toBottomOf="@id/layoutPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:paddingStart="40dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Nút đăng ký -->
+    <!-- Nút đăng nhập -->
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Đăng ký"
+        android:text="Đăng nhập "
         android:textAllCaps="false"
         android:backgroundTint="@android:color/black"
         android:textColor="@android:color/white"
@@ -142,24 +115,69 @@
         app:icon="@drawable/ic_arrow_right"
         app:iconTint="@android:color/white"
         app:iconGravity="textEnd"
-        app:layout_constraintTop_toBottomOf="@id/layoutConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@id/layoutPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
-    <!-- Link chuyển sang đăng nhập -->
-    <TextView
-        android:id="@+id/txtLoginRedirect"
+    <!-- Social Login -->
+    <LinearLayout
+        android:id="@+id/layoutSocial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đã có tài khoản? Đăng nhập."
-        android:textSize="14sp"
-        android:textColor="@color/design_default_color_primary"
-        app:layout_constraintTop_toBottomOf="@id/btnRegister"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_insta"
+            android:background="@drawable/bg_circle_gray"
+            android:padding="10dp"
+            android:layout_marginEnd="12dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_facebook"
+            android:background="@drawable/bg_circle_gray"
+            android:padding="10dp"
+            android:layout_marginEnd="12dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_linkedin"
+            android:background="@drawable/bg_circle_gray"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <!-- Link đăng ký & quên mật khẩu -->
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chưa có tài khoản? Đăng ký."
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/layoutSocial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/txtForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/txtRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
