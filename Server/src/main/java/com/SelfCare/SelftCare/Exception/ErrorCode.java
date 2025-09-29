@@ -1,7 +1,8 @@
 package com.SelfCare.SelftCare.Exception;
 
 public enum ErrorCode {
-
+    USERNAME_EXISTED(101,"user name existed"),
+    EMAIL_EXISTED(101,"user name existed"),
     ;
     private int code;
     private String message;

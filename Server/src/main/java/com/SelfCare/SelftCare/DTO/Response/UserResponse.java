@@ -12,5 +12,5 @@ public class UserResponse {
      Long id;
      String email;
      String username;
-     UserProfileResponse profile;
+     UserProfileResponse userProfileResponse;
 }
