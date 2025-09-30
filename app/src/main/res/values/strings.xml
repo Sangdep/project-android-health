@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">App_selfCare</string>
+    <string name="back_button_description">Quay lại màn hình trước</string>
+    <string name="assessment_title">Assessment</string>
+    <string name="page_indicator_1_of_6">1 of 6</string>
+
+    <string name="page_indicator_2_of_6">2 of 6</string>
+    <string name="page_indicator_3_of_6">3 of 6</string>
+    <string name="page_indicator_4_of_6">4 of 6</string>
+    <string name="current_weight_question">Cân nặng của bạn hiện tại?</string>
+    <string name="unit_kg">Kg</string>
+    <string name="unit_lbs">Lbs</string>
+    <string name="default_weight_display">62 Kg</string>
+    <string name="weight_ruler_description">Thước đo cân nặng</string>
+    <string name="continue_button_text">Continue</string>
+</resources>
