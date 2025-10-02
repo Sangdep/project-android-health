@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Builder
-@RequestMapping("/users")
+@RequestMapping("/Users")
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 public class UserController {
 

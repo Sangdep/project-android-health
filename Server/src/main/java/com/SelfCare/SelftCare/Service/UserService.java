@@ -3,6 +3,7 @@ package com.SelfCare.SelftCare.Service;
 import com.SelfCare.SelftCare.DTO.Request.UserRegisterRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserResponse;
 import com.SelfCare.SelftCare.Entity.User;
+import com.SelfCare.SelftCare.Entity.UserProfile;
 import com.SelfCare.SelftCare.Enum.Role;
 import com.SelfCare.SelftCare.Exception.AppException;
 import com.SelfCare.SelftCare.Exception.ErrorCode;
@@ -29,13 +30,17 @@ public class UserService {
 
     public UserResponse userRegister(UserRegisterRequest request)
     {
-        User user=userRepository.findByUsername(request.getUsername())
-                .orElseThrow(() -> new AppException(ErrorCode.USERNAME_EXISTED));
+        if(userRepository.existsByUsername(request.getUsername()))
+        {
+            throw new AppException(ErrorCode.USERNAME_EXISTED);
+        }
+        if(userRepository.existsByEmail(request.getEmail()))
+        {
+            throw new AppException(ErrorCode.EMAIL_EXISTED);
+        }
 
-        User emailUser= userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new AppException(ErrorCode.EMAIL_EXISTED));
 
-        user=userMapper.toUser(request);
+        User user=userMapper.toUser(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         HashSet<String>role= new HashSet<>();
@@ -43,6 +48,16 @@ public class UserService {
 
         user.setRoles(role);
 
+        UserProfile userProfile=UserProfile.builder()
+                .fullName(request.getFullName())
+                .dateOfBirth(request.getDateOfBirth())
+                .gender(request.getGender())
+                .height(request.getHeight())
+                .weight(request.getWeight())
+                .healthGoal(request.getHealthGoal())
+                .user(user)
+                .build();
+        user.setUserProfile(userProfile);
 
         return userMapper.toUserResponse(userRepository.save(user));
 

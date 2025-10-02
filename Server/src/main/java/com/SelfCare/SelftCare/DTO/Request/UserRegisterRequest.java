@@ -1,10 +1,7 @@
 package com.SelfCare.SelftCare.DTO.Request;
 
 import com.SelfCare.SelftCare.Enum.Gender;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -22,11 +19,11 @@ public class UserRegisterRequest {
     String email;
 
     @NotBlank
-    @Min(value = 3, message = "ít nhất 3 kí tự")
+    @Size(min = 3, message = "ít nhất 3 kí tự")
     String username;
 
     @NotBlank
-    @Min(value = 8,message = "ít nhất 8 kí tự")
+    @Size(min = 8,message = "ít nhất 8 kí tự")
     String password;
 
      String fullName;
