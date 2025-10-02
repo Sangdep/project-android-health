@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Health Tracker</string>
+    <string name="settings_title">Cài đặt tài khoản</string>
+    <string name="change_password_title">Đổi mật khẩu</string>
+    <string name="notifications_title">Thông báo</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="sign_out">Đăng xuất</string>
+    <string name="old_password">Nhập mật khẩu cũ</string>
+    <string name="new_password">Nhập mật khẩu mới</string>
+    <string name="confirm_password">Xác nhận mật khẩu mới</string>
+    <string name="change_password_btn">Đổi mật khẩu</string>
+    <string name="personal_info">Thông tin cá nhân</string>
+    <string name="help">Trợ giúp</string>
+    <string name="personal_notification">Cập nhật điểm cá nhân</string>
+    <string name="water_notification">Thông báo uống nước</string>
+    <string name="exercise_notification">Thông báo luyện tập</string>
+    <string name="food_notification">Thông báo bữa ăn</string>
+    <string name="chart_title">Biểu đồ điểm</string>
+    <string name="this_week">Tuần này</string>
+    <string name="weight">Cân nặng</string>
+    <string name="bmi">BMI</string>
+</resources>
