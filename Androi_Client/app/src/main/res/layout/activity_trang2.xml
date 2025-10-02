@@ -1,50 +1,53 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <!-- Ảnh nền -->
     <ImageView
         android:id="@+id/bgImage"
-        android:src="@drawable/img_trang1"
-        android:scaleType="centerCrop"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_trang2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <!-- Tiêu đề -->
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Cơ thể khoẻ\nTâm trí vững vàng"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="484dp"/>
-
-    <!-- Phụ đề -->
-    <TextView
-        android:id="@+id/subtitle"
-        android:text="Cơ thể bạn xứng đáng được chăm sóc..."
-        android:textColor="@android:color/white"
-        android:gravity="center"
+        android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        android:text="Cá nhân hóa chế độ\năn và luyện tập"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/tvSubtitle"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Mô tả -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Từ chế độ ăn uống, tập luyện cho đến nghỉ ngơi, ứng dụng giúp bạn đi đúng hướng đến mục tiêu"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dotsIndicator"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="24dp"/>
 
     <!-- 3 chấm chuyển trang -->
     <LinearLayout
@@ -54,20 +57,20 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinue"
         android:layout_marginBottom="24dp">
 
         <View
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:layout_margin="4dp"
-            android:background="@drawable/dot_active"/>
+            android:background="@drawable/dot_inactive"/>
 
         <View
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:layout_margin="4dp"
-            android:background="@drawable/dot_inactive"/>
+            android:background="@drawable/dot_active"/>
 
         <View
             android:layout_width="8dp"
