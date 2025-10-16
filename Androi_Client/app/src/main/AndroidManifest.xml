@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
+            android:name=".TrangChu"
+            android:exported="false" />
+        <activity
             android:name=".Trang_Dang_Ky"
             android:exported="false" />
         <activity
