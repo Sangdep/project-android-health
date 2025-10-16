@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".InforAge">
+
+    <!-- Top App Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="56dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/back_button_description"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+        <!-- Bạn nên sử dụng @string resource cho contentDescription -->
+
+        <!-- Bạn nên sử dụng @string resource cho text -->
+
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assessment"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textViewPageIndicator"
+            app:layout_constraintHorizontal_bias="0.103"
+            app:layout_constraintStart_toEndOf="@id/buttonBack"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewPageIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/page_indicator_1_of_6"
+            android:textColor="@color/orange_text_icon"
+            android:background="@drawable/rounded_corner_background_light_orange"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <!-- Bạn nên sử dụng @string resource cho text -->
+        <!-- Tạo drawable/rounded_corner_background_light_blue.xml -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Question Text -->
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuổi của bạn?"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+    <!-- Bạn nên sử dụng @string resource cho text -->
+
+
+    <!-- Number Picker Simulation (Vertical LinearLayout) -->
+    <!-- Đây là phần khó nhất để làm giống hệt bằng XML thuần túy.
+         Sử dụng NumberPicker widget trong code sẽ tốt hơn.
+         Dưới đây là mô phỏng tĩnh với các TextView.
+    -->
+    <LinearLayout
+        android:id="@+id/numberPickerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textViewQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonContinue"
+        app:layout_constraintVertical_bias="0.3">
+        <!-- Điều chỉnh Vertical_bias để căn chỉnh theo chiều dọc -->
+
+        <TextView
+            android:id="@+id/textViewAgePrevious2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17"
+            android:textSize="30sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="8dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewAgePrevious1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18"
+            android:textSize="40sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="8dp"
+            tools:ignore="HardcodedText" />
+
+        <!-- Selected Age -->
+        <TextView
+            android:id="@+id/textViewAgeSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/rounded_corner_background_orange"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:gravity="center"
+            tools:ignore="HardcodedText" />
+        <!-- Tạo drawable/rounded_corner_background_orange.xml -->
+
+
+        <TextView
+            android:id="@+id/textViewAgeNext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:textSize="40sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="8dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewAgeNext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21"
+            android:textSize="30sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="8dp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!-- Continue Button -->
+    <Button
+        android:id="@+id/buttonContinue"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Continue"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_corner_background_black"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconTint="@android:color/white"
+        app:iconGravity="textEnd"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+    <!-- Bạn nên sử dụng @string resource cho text -->
+    <!-- Tạo drawable/rounded_corner_background_black.xml -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

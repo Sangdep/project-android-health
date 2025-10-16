@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
+            android:name=".ForgetPassword_confirm"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ComprehensiveFitnessAssessment_2"
+            android:exported="false" />
+        <activity
+            android:name=".ComprehensiveFitnessAssessment"
+            android:exported="false" />
+        <activity
+            android:name=".InfoWeight"
+            android:exported="false" />
+        <activity
+            android:name=".InforAge"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
