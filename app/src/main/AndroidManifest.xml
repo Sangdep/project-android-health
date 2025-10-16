@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
-<!--        <activity-->
-<!--            android:name=".SavedRecipesActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".RecipeHomeActivity"
+            android:exported="false" />
         <activity
             android:name=".AccountSettingsActivity"
             android:exported="false" />
@@ -33,7 +33,7 @@
             android:name=".SavedRecipesActivity"
             android:exported="false" />
         <activity
-            android:name=".RecipeHomeActivity"
+            android:name=".ResetPasswordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
