@@ -12,7 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
-            android:name=".MainActivity"
+            android:name=".RecipeHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SavedRecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
