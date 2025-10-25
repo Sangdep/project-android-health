@@ -30,16 +30,14 @@ public class UserService {
 
     public UserResponse userRegister(UserRegisterRequest request)
     {
-        if(userRepository.existsByUsername(request.getUsername()))
-        {
-            throw new AppException(ErrorCode.USERNAME_EXISTED);
-        }
+
         if(userRepository.existsByEmail(request.getEmail()))
         {
             throw new AppException(ErrorCode.EMAIL_EXISTED);
         }
 
 
+        //tao user
         User user=userMapper.toUser(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
@@ -48,18 +46,16 @@ public class UserService {
 
         user.setRoles(role);
 
-        UserProfile userProfile=UserProfile.builder()
-                .fullName(request.getFullName())
-                .dateOfBirth(request.getDateOfBirth())
-                .gender(request.getGender())
-                .height(request.getHeight())
-                .weight(request.getWeight())
-                .healthGoal(request.getHealthGoal())
+        //tao userprofile null
+        UserProfile userProfile= UserProfile.builder()
                 .user(user)
                 .build();
+
         user.setUserProfile(userProfile);
 
-        return userMapper.toUserResponse(userRepository.save(user));
+        User save=userRepository.save(user);
+
+        return userMapper.toUserResponse(save);
 
     }
 

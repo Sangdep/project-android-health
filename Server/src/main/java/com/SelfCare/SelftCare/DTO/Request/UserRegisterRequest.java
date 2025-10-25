@@ -20,16 +20,10 @@ public class UserRegisterRequest {
 
     @NotBlank
     @Size(min = 3, message = "ít nhất 3 kí tự")
-    String username;
+    String fullName;
 
     @NotBlank
     @Size(min = 8,message = "ít nhất 8 kí tự")
     String password;
 
-     String fullName;
-     LocalDate dateOfBirth;
-     Gender gender;
-     Double height;
-     Double weight;
-     String healthGoal;
 }

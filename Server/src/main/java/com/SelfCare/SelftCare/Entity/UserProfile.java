@@ -17,7 +17,7 @@ public class UserProfile {
 
     @Id
      Long id; //phai trung voi userid
-     String fullName;
+
      String avatarUrl;
 
      LocalDate dateOfBirth;
