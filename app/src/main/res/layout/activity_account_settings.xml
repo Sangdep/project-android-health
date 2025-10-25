@@ -22,7 +22,7 @@
             android:layout_height="40dp"
             android:background="@drawable/back_button_style"
             android:padding="10dp"
-            app:srcCompat="@drawable/ic_back"
+            app:srcCompat="@drawable/ic_backk"
             app:tint="@android:color/white" />
 
         <TextView
@@ -129,7 +129,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/ic_lock"
+                android:background="@drawable/ic_lockk"
                 app:tint="@android:color/white" />
 
             <TextView

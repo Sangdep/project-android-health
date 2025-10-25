@@ -31,7 +31,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/back_button_style"
                     android:padding="10dp"
-                    app:srcCompat="@drawable/ic_back"
+                    app:srcCompat="@drawable/ic_backk"
                     app:tint="@android:color/white" />
 
                 <TextView
