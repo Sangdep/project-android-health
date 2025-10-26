@@ -32,6 +32,8 @@ import java.util.StringJoiner;
 @Slf4j
 public class AuthService {
     UserRepository userRepository;
+    MailService mailService;
+    PasswordEncoder passwordEncoder;
 
     @NonFinal
     @Value("${jwt.signerKey}")
@@ -99,4 +101,25 @@ public class AuthService {
         }
         return stringJoiner.toString();
     }
+
+
+    public void resetPassword(String email, String newPassword) {
+        // Kiểm tra đã xác minh OTP chưa
+        if (!mailService.isOtpVerified(email)) {
+            throw new AppException(ErrorCode.INVALID_OTP); // hoặc tạo thêm ErrorCode như "OTP_NOT_VERIFIED"
+        }
+
+        // Kiểm tra email có tồn tại không
+        var user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new AppException(ErrorCode.EMAIL_NOT_FOUND));
+
+        // Mã hóa mật khẩu mới
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        // Dọn dẹp OTP sau khi reset thành công
+        mailService.clearOtp(email);
+    }
+
+
 }
