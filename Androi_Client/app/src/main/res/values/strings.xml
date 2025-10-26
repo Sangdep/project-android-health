@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Health Tracker</string>
-    <string name="settings_title">Cài đặt tài khoản</string>
-    <string name="change_password_title">Đổi mật khẩu</string>
-    <string name="notifications_title">Thông báo</string>
-    <string name="dashboard_title">Dashboard</string>
-    <string name="sign_out">Đăng xuất</string>
-    <string name="old_password">Nhập mật khẩu cũ</string>
-    <string name="new_password">Nhập mật khẩu mới</string>
-    <string name="confirm_password">Xác nhận mật khẩu mới</string>
-    <string name="change_password_btn">Đổi mật khẩu</string>
-    <string name="personal_info">Thông tin cá nhân</string>
-    <string name="help">Trợ giúp</string>
-    <string name="personal_notification">Cập nhật điểm cá nhân</string>
-    <string name="water_notification">Thông báo uống nước</string>
-    <string name="exercise_notification">Thông báo luyện tập</string>
-    <string name="food_notification">Thông báo bữa ăn</string>
-    <string name="chart_title">Biểu đồ điểm</string>
-    <string name="this_week">Tuần này</string>
-    <string name="weight">Cân nặng</string>
-    <string name="bmi">BMI</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">App_selfCare</string>
+    <string name="back_button_description">Quay lại màn hình trước</string>
+    <string name="assessment_title">Assessment</string>
+    <string name="page_indicator_1_of_6">1 of 6</string>
+
+    <string name="page_indicator_2_of_6">2 of 6</string>
+    <string name="page_indicator_3_of_6">3 of 6</string>
+    <string name="page_indicator_4_of_6">4 of 6</string>
+    <string name="current_weight_question">Cân nặng của bạn hiện tại?</string>
+    <string name="unit_kg">Kg</string>
+    <string name="unit_lbs">Lbs</string>
+    <string name="default_weight_display">62 Kg</string>
+    <string name="weight_ruler_description">Thước đo cân nặng</string>
+    <string name="continue_button_text">Continue</string>
 </resources>

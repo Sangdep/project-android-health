@@ -12,28 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
-            android:name=".RecipeHomeActivity"
+            android:name=".ForgetPassword_confirm"
             android:exported="false" />
         <activity
-            android:name=".AccountSettingsActivity"
+            android:name=".ForgetPassword"
             android:exported="false" />
         <activity
-            android:name=".RecipeActivity"
+            android:name=".ComprehensiveFitnessAssessment_2"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".NotificationActivity"
+            android:name=".ComprehensiveFitnessAssessment"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".InfoWeight"
             android:exported="false" />
         <activity
-            android:name=".SavedRecipesActivity"
+            android:name=".InforAge"
             android:exported="false" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
