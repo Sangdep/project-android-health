@@ -1,4 +1,4 @@
-package com.SelfCare.SelftCare.DTO.Request;
+package com.SelfCare.SelftCare.DTO.Response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,7 +8,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
-public class UserLoginRequest {
-    String email;
-    String password;
+public class UserLoginResponse {
+    boolean authenticated;
+    String token;
+    String role;
 }

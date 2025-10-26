@@ -3,6 +3,8 @@ package com.SelfCare.SelftCare.Exception;
 public enum ErrorCode {
 
     EMAIL_EXISTED(101,"email existed"),
+    EMAIL_NOT_FOUND(102,"email not found"),
+    UNAUTHENTICATED(999,"unauthenticated")
     ;
     private int code;
     private String message;
