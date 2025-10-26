@@ -30,6 +30,27 @@
             android:name=".InforAge"
             android:exported="false" />
         <activity
+            android:name=".TrangChu"
+            android:exported="false" />
+        <activity
+            android:name=".Trang2"
+            android:exported="false" />
+        <activity
+            android:name=".Trang3"
+            android:exported="false" />
+        <activity
+            android:name=".Trang4"
+            android:exported="false" />
+        <activity
+            android:name=".Trang_Dang_Ky"
+            android:exported="false" />
+        <activity
+            android:name=".Trang_Login"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

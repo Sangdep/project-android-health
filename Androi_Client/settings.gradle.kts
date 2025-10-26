@@ -1,10 +1,9 @@
-// settings.gradle.kts (Project level) - PHẢI CÓ FILE NÀY
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven("https://jitpack.io") // ✅ thêm ở đây cũng được
+        maven("https://jitpack.io") // cần thiết cho MPAndroidChart
     }
 }
 
@@ -13,9 +12,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven("https://jitpack.io") // ✅ bắt buộc
+        maven("https://jitpack.io") // thêm JitPack vào
     }
 }
 
-rootProject.name = "App_Selfcare"
+rootProject.name = "App_selfcare"
 include(":app")

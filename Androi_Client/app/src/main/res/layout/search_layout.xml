@@ -18,7 +18,7 @@
             android:id="@+id/backButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_backk"
             app:tint="@android:color/white" />
 
         <TextView
@@ -44,7 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/search_background"
-            android:drawableEnd="@drawable/ic_search"
             android:hint="Diet"
             android:paddingHorizontal="16dp"
             android:textColorHint="#999999" />
