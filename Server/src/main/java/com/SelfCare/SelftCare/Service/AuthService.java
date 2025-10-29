@@ -1,6 +1,7 @@
 package com.SelfCare.SelftCare.Service;
 
 import com.SelfCare.SelftCare.DTO.Request.UserLoginRequest;
+import com.SelfCare.SelftCare.DTO.Request.UserResetPasswordRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserLoginResponse;
 import com.SelfCare.SelftCare.Entity.User;
 import com.SelfCare.SelftCare.Exception.AppException;
@@ -103,7 +104,10 @@ public class AuthService {
     }
 
 
-    public void resetPassword(String email, String newPassword) {
+    public void resetPassword(UserResetPasswordRequest request) {
+
+        String email=request.getEmail();
+        String newPassword=request.getNewPassword();
         // Kiểm tra đã xác minh OTP chưa
         if (!mailService.isOtpVerified(email)) {
             throw new AppException(ErrorCode.INVALID_OTP); // hoặc tạo thêm ErrorCode như "OTP_NOT_VERIFIED"

@@ -1,5 +1,8 @@
 package com.SelfCare.SelftCare.Service;
 
+import com.SelfCare.SelftCare.DTO.Request.UserForgotPassword;
+import com.SelfCare.SelftCare.DTO.Request.UserVerifyRequest;
+import com.SelfCare.SelftCare.Entity.User;
 import com.SelfCare.SelftCare.Exception.AppException;
 import com.SelfCare.SelftCare.Exception.ErrorCode;
 import com.SelfCare.SelftCare.Repository.UserRepository;
@@ -29,7 +32,9 @@ public class MailService {
     }
 
     // 🔹 Gửi OTP đến email người dùng
-    public void sendOtp(String mail) {
+    public void sendOtp(UserForgotPassword userForgotPassword) {
+
+        String mail=userForgotPassword.getEmail();
         // Kiểm tra email tồn tại trong hệ thống
         if (!userRepository.existsByEmail(mail)) {
             throw new AppException(ErrorCode.EMAIL_NOT_FOUND);
@@ -49,7 +54,9 @@ public class MailService {
     }
 
     // 🔹 Kiểm tra OTP người dùng nhập
-    public boolean verifyOtp(String email, String inputOtp) {
+    public boolean verifyOtp(UserVerifyRequest request ) {
+        String email=request.getEmail();
+        String inputOtp=request.getOtp();
         String storedOtp = redisTemplate.opsForValue().get("otp:" + email);
 
         if (storedOtp != null && storedOtp.equals(inputOtp)) {

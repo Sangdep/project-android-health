@@ -1,7 +1,10 @@
 package com.SelfCare.SelftCare.Controller;
 
 import com.SelfCare.SelftCare.DTO.ApiResponse;
+import com.SelfCare.SelftCare.DTO.Request.UserForgotPassword;
 import com.SelfCare.SelftCare.DTO.Request.UserLoginRequest;
+import com.SelfCare.SelftCare.DTO.Request.UserResetPasswordRequest;
+import com.SelfCare.SelftCare.DTO.Request.UserVerifyRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserLoginResponse;
 import com.SelfCare.SelftCare.Service.AuthService;
 import com.SelfCare.SelftCare.Service.MailService;
@@ -32,18 +35,20 @@ public class AuthController {
     }
 
     @PostMapping("/forgot-password")
-    public ApiResponse<String> forgotPassword(@RequestParam String email) {
-        mailService.sendOtp(email);
+    public ApiResponse<String> forgotPassword(@RequestBody UserForgotPassword request) {
+        mailService.sendOtp(request);
         return ApiResponse.<String>builder()
-                .result("OTP đã được gửi đến email " + email)
+                .result("OTP đã được gửi đến email " + request.getEmail())
                 .message("Vui lòng kiểm tra hộp thư của bạn")
                 .code(200)
                 .build();
     }
 
+
     @PostMapping("/verify-otp")
-    public ApiResponse<String> verifyOtp(@RequestParam String email, @RequestParam String otp) {
-        boolean valid = mailService.verifyOtp(email, otp);
+    public ApiResponse<String> verifyOtp(@RequestBody UserVerifyRequest request) {
+
+        boolean valid = mailService.verifyOtp(request);
         if (valid) {
             return ApiResponse.<String>builder()
                     .result("Xác minh OTP thành công! Bạn có thể đặt lại mật khẩu.")
@@ -58,8 +63,8 @@ public class AuthController {
     }
 
     @PostMapping("/reset-password")
-    public ApiResponse<String> resetPassword(@RequestParam String email,@RequestParam String newPassword) {
-        authService.resetPassword(email, newPassword);
+    public ApiResponse<String> resetPassword(@RequestBody UserResetPasswordRequest request) {
+        authService.resetPassword(request);
         return ApiResponse.<String>builder()
                 .result("Mật khẩu đã được đặt lại thành công!")
                 .code(200)
