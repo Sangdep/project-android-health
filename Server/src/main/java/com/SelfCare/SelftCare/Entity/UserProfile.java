@@ -17,13 +17,9 @@ public class UserProfile {
 
     @Id
      Long id; //phai trung voi userid
-
      String avatarUrl;
-
      LocalDate dateOfBirth;
-
      Gender gender;
-
      Double height;
      Double weight;
      String healthGoal;

@@ -31,3 +31,7 @@ spring:
       port: 6379
 jwt:
   signerKey: "HAGUOt0Qm87yn2SFEfjlVRM3chXO/Wpy1YnsdZQz2O7+S4dPFiTQvpxHVVLE6r+c"
+
+
+file:
+  upload-dir: uploads/
