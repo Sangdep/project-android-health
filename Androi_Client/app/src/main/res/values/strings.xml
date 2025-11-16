@@ -3,15 +3,26 @@
     <string name="app_name">App_selfCare</string>
     <string name="back_button_description">Quay lại màn hình trước</string>
     <string name="assessment_title">Assessment</string>
-    <string name="page_indicator_1_of_6">1 of 6</string>
 
-    <string name="page_indicator_2_of_6">2 of 6</string>
-    <string name="page_indicator_3_of_6">3 of 6</string>
-    <string name="page_indicator_4_of_6">4 of 6</string>
+    <!-- Page indicators (phải đúng với XML: "1/6", không phải "1 of 6") -->
+    <string name="page_indicator_1_of_6">1/6</string>
+    <string name="page_indicator_2_of_6">2/6</string>
+    <string name="page_indicator_3_of_6">3/6</string>
+    <string name="page_indicator_4_of_6">4/6</string>
+
+    <!-- Weight screen -->
     <string name="current_weight_question">Cân nặng của bạn hiện tại?</string>
     <string name="unit_kg">Kg</string>
     <string name="unit_lbs">Lbs</string>
     <string name="default_weight_display">62 Kg</string>
     <string name="weight_ruler_description">Thước đo cân nặng</string>
-    <string name="continue_button_text">Continue</string>
+
+    <!-- Buttons -->
+    <string name="continue_button_text">Tiếp tục</string>
+
+    <!-- Goal screen -->
+    <string name="goal_lose_weight">Tôi muốn giảm cân</string>
+    <string name="goal_virtual_assistant">Tôi muốn thử với trợ lý ảo</string>
+    <string name="goal_increase_strength">Tôi muốn tăng sức bền</string>
+    <string name="goal_try_app">Chỉ đang thử ứng dụng!</string>
 </resources>

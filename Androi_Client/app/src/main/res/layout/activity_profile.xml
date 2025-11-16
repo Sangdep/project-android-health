@@ -47,6 +47,17 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/btnSettings"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_setting"
+                app:tint="#666666"
+                android:clickable="true"
+                android:focusable="true" />
+
         </LinearLayout>
 
         <!-- Profile Section -->
@@ -323,7 +334,7 @@
     </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/helpLayout"
+            android:id="@+id/updateInfor"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"

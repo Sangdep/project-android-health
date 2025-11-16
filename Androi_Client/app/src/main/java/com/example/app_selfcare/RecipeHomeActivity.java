@@ -2,7 +2,6 @@ package com.example.app_selfcare;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -37,23 +36,23 @@ public class RecipeHomeActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        // Click vào các card để mở RecipeActivity
+        // Click vào các card để mở RecipeDetailActivity
         recipeCard1.setOnClickListener(v -> {
-            Intent intent = new Intent(RecipeHomeActivity.this, RecipeActivity.class);
+            Intent intent = new Intent(RecipeHomeActivity.this, RecipeDetailActivity.class);
             intent.putExtra("recipeName", "Classic Greek Salad");
             intent.putExtra("recipeTime", "15 Mins");
             startActivity(intent);
         });
 
         recipeCard2.setOnClickListener(v -> {
-            Intent intent = new Intent(RecipeHomeActivity.this, RecipeActivity.class);
+            Intent intent = new Intent(RecipeHomeActivity.this, RecipeDetailActivity.class);
             intent.putExtra("recipeName", "Crunchy Nut Coleslaw");
             intent.putExtra("recipeTime", "10 Mins");
             startActivity(intent);
         });
 
         newRecipeCard1.setOnClickListener(v -> {
-            Intent intent = new Intent(RecipeHomeActivity.this, RecipeActivity.class);
+            Intent intent = new Intent(RecipeHomeActivity.this, RecipeDetailActivity.class);
             intent.putExtra("recipeName", "Steak with tomato...");
             intent.putExtra("recipeTime", "20 Mins");
             startActivity(intent);

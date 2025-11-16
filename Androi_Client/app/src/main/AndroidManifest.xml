@@ -12,46 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
-            android:name=".ForgetPassword_confirm"
+            android:name=".ManageFoodActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgetPassword"
+            android:name=".ManageExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".ComprehensiveFitnessAssessment_2"
+            android:name=".ManageNotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".ComprehensiveFitnessAssessment"
-            android:exported="false" />
+            android:name=".AdminHomeActivity"
+            android:exported="false" /> <!-- ONBOARDING -->
         <activity
-            android:name=".InfoWeight"
-            android:exported="false" />
-        <activity
-            android:name=".InforAge"
-            android:exported="false" />
-        <activity
-            android:name=".TrangChu"
-            android:exported="false" />
-        <activity
-            android:name=".Trang2"
-            android:exported="false" />
-        <activity
-            android:name=".Trang3"
-            android:exported="false" />
-        <activity
-            android:name=".Trang4"
-            android:exported="false" />
-        <activity
-            android:name=".Trang_Dang_Ky"
-            android:exported="false" />
-        <activity
-            android:name=".Trang_Login"
-            android:exported="false" />
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Onboarding1Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,6 +32,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Onboarding2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Onboarding3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Onboarding4Activity"
+            android:exported="false" /> <!-- AUTH -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPassword_confirm"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" /> <!-- INFO USER -->
+        <activity
+            android:name=".InforAge"
+            android:exported="false" />
+        <activity
+            android:name=".InforGoal"
+            android:exported="false" />
+        <activity
+            android:name=".InforHeight"
+            android:exported="false" />
+        <activity
+            android:name=".InforSex"
+            android:exported="false" />
+        <activity
+            android:name=".InforWeight"
+            android:exported="false" /> <!-- MAIN APP -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SavedRecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
