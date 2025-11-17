@@ -1,6 +1,7 @@
 package com.SelfCare.SelftCare.Service;
 
 import com.SelfCare.SelftCare.DTO.Request.UpdateUserProfileRequest;
+import com.SelfCare.SelftCare.DTO.Request.UserProfileRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserProfileResponse;
 import com.SelfCare.SelftCare.DTO.Response.UserResponse;
 import com.SelfCare.SelftCare.Entity.User;
@@ -10,6 +11,7 @@ import com.SelfCare.SelftCare.Exception.ErrorCode;
 import com.SelfCare.SelftCare.Mapper.UserProfileMapper;
 import com.SelfCare.SelftCare.Repository.UserProfileRepository;
 import com.SelfCare.SelftCare.Repository.UserRepository;
+import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -32,7 +34,7 @@ public class UserProfileService {
 
 
     @Transactional
-    public UserResponse updateProfile(UpdateUserProfileRequest request) throws IOException {
+    public UserResponse updateProfile(@Valid UpdateUserProfileRequest request) throws IOException {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
