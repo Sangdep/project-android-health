@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare">
         <activity
+            android:name=".WorkoutTrainingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManageFoodActivity"
             android:exported="false" />
         <activity
