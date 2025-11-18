@@ -33,7 +33,7 @@
             android:name=".AdminHomeActivity"
             android:exported="false" /> <!-- ONBOARDING -->
         <activity
-            android:name=".Onboarding1Activity"
+            android:name=".ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,7 +93,7 @@
             android:name=".SavedRecipesActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Onboarding1Activity"
             android:exported="false" />
         <activity
             android:name=".AccountSettingsActivity"
