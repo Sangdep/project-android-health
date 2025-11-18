@@ -65,6 +65,7 @@ public class RecipeHomeActivity extends AppCompatActivity {
 
         // Navigation
         homeIcon.setOnClickListener(v -> finish());
+
         profileIcon.setOnClickListener(v -> startActivity(new Intent(RecipeHomeActivity.this, ProfileActivity.class)));
     }
 }

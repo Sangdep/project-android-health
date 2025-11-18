@@ -25,7 +25,8 @@ public class HomeActivity extends AppCompatActivity {
 
         // CARD BÀI TẬP (sẽ làm sau)
         findViewById(R.id.cardWorkoutSample).setOnClickListener(v -> {
-            // Sẽ làm sau
+            startActivity(new Intent(HomeActivity.this, WorkoutActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
         // See All Workouts (sẽ làm sau)

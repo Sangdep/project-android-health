@@ -147,7 +147,7 @@
             android:id="@+id/goalVirtualAssistantLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/goal_selected_bg"
+            android:background="@drawable/bg_back_button_white"
             android:paddingStart="16dp"
             android:paddingTop="12dp"
             android:paddingEnd="12dp"
@@ -156,21 +156,21 @@
 
             <ImageView
                 android:id="@+id/iconVirtualAssistant"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_virtual_assistant_placeholder"
-                app:tint="#FFFFFF"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:contentDescription="Icon trợ lý ảo"
+                android:src="@drawable/bg_button_black"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:contentDescription="Icon trợ lý ảo"/>
+                app:tint="#1D1C1C" />
 
             <TextView
                 android:id="@+id/textVirtualAssistant"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Tôi muốn thử với trợ lý ảo"
-                android:textColor="#FFFFFF"
+                android:text="Tôi muốn giữ cân"
+                android:textColor="#212020"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
