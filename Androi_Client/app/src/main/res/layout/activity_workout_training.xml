@@ -144,13 +144,15 @@
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:layout_margin="16dp"
+        android:layout_height="70dp"
         android:background="@drawable/bottom_nav_bg"
         android:elevation="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -165,6 +167,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
+                android:background="@android:color/transparent"
                 android:padding="12dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_home" />
@@ -180,10 +183,10 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
+                android:background="@android:color/transparent"
                 android:padding="12dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_workout"
-                android:background="@drawable/bottom_nav_selected_bg" />
+                android:src="@drawable/ic_workout" />
         </FrameLayout>
 
         <FrameLayout
@@ -211,6 +214,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
+                android:background="@android:color/transparent"
                 android:padding="12dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_proflie" />

@@ -47,19 +47,20 @@ public class ProfileActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
-    private void initViews() {
-        btnBack = findViewById(R.id.btnBack);
-        btnSettings = findViewById(R.id.btnSettings);
+    void initViews() {
+
+        chartView = findViewById(R.id.chartView);
+        pointsText = findViewById(R.id.pointsText);
+        weightText = findViewById(R.id.weightText);
+        bmiText = findViewById(R.id.bmiText);
 
         homeIcon = findViewById(R.id.homeIcon);
         workoutIcon = findViewById(R.id.workoutIcon);
         recipeIcon = findViewById(R.id.recipeIcon);
         profileIcon = findViewById(R.id.profileIcon);
 
-        chartView = findViewById(R.id.chartView);
-        pointsText = findViewById(R.id.pointsText);
-        weightText = findViewById(R.id.weightText);
-        bmiText = findViewById(R.id.bmiText);
+        btnSettings = findViewById(R.id.btnSettings);
+        btnBack = findViewById(R.id.btnBack);
     }
 
     private void setupChart() {

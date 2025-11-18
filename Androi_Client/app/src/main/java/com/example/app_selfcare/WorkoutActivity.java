@@ -25,9 +25,31 @@ public class WorkoutActivity extends AppCompatActivity {
         });
 
         ImageView homeIcon = findViewById(R.id.homeIcon);
+        ImageView workoutIcon = findViewById(R.id.workoutIcon);
+        ImageView recipeIcon = findViewById(R.id.recipeIcon);
+        ImageView profileIcon = findViewById(R.id.profileIcon);
+
         homeIcon.setOnClickListener(v -> {
             Intent intent = new Intent(WorkoutActivity.this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        });
+
+        workoutIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(WorkoutActivity.this, WorkoutActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
+
+        recipeIcon.setOnClickListener(v -> {
+            startActivity(new Intent(WorkoutActivity.this, RecipeHomeActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
+
+        profileIcon.setOnClickListener(v -> {
+            startActivity(new Intent(WorkoutActivity.this, ProfileActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
         View cardSquat = findViewById(R.id.cardSquat);

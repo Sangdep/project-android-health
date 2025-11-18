@@ -64,8 +64,27 @@ public class RecipeHomeActivity extends AppCompatActivity {
         });
 
         // Navigation
-        homeIcon.setOnClickListener(v -> finish());
+        homeIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RecipeHomeActivity.this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        });
 
-        profileIcon.setOnClickListener(v -> startActivity(new Intent(RecipeHomeActivity.this, ProfileActivity.class)));
+        workoutIcon.setOnClickListener(v -> {
+            startActivity(new Intent(RecipeHomeActivity.this, WorkoutActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
+
+        recipeIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(RecipeHomeActivity.this, RecipeHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+        });
+
+        profileIcon.setOnClickListener(v -> {
+            startActivity(new Intent(RecipeHomeActivity.this, ProfileActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
     }
 }

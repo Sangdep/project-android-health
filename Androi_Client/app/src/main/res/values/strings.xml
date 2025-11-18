@@ -17,6 +17,12 @@
     <string name="default_weight_display">62 Kg</string>
     <string name="weight_ruler_description">Thước đo cân nặng</string>
 
+    <!-- Height screen -->
+    <string name="current_height_question">Chiều cao của bạn hiện tại</string>
+    <string name="unit_cm">Cm</string>
+    <string name="default_height_display">165 Cm</string>
+    <string name="height_ruler_description">Thước đo chiều cao</string>
+
     <!-- Buttons -->
     <string name="continue_button_text">Tiếp tục</string>
 

@@ -34,10 +34,33 @@ public class WorkoutDetailActivity extends AppCompatActivity {
         });
 
         ImageView homeIcon = findViewById(R.id.homeIcon);
+        ImageView workoutIcon = findViewById(R.id.workoutIcon);
+        ImageView recipeIcon = findViewById(R.id.recipeIcon);
+        ImageView profileIcon = findViewById(R.id.profileIcon);
+
         homeIcon.setOnClickListener(v -> {
             Intent intent = new Intent(WorkoutDetailActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        });
+
+        workoutIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(WorkoutDetailActivity.this, WorkoutActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            finish();
+        });
+
+        recipeIcon.setOnClickListener(v -> {
+            startActivity(new Intent(WorkoutDetailActivity.this, RecipeHomeActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        });
+
+        profileIcon.setOnClickListener(v -> {
+            startActivity(new Intent(WorkoutDetailActivity.this, ProfileActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
         Button startWorkoutButton = findViewById(R.id.btnStartWorkout);

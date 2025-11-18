@@ -11,13 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_selfCare" >
+
         <activity
             android:name=".upload.Avatar"
             android:exported="false" />
-        <activity
-            android:name=".upload.upload_Avatar"
-            android:exported="false"
-            android:theme="@style/Theme.App_selfCare" />
         <activity
             android:name=".WorkoutTrainingActivity"
             android:exported="false" />
@@ -38,16 +35,12 @@
             android:exported="false" />
         <activity
             android:name=".AdminHomeActivity"
-            android:exported="false" /> <!-- ONBOARDING -->
+            android:exported="false" />
+
         <activity
             android:name=".ProfileActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Onboarding2Activity"
             android:exported="false" />
@@ -56,7 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".Onboarding4Activity"
-            android:exported="false" /> <!-- AUTH -->
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -71,7 +64,7 @@
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
-            android:exported="false" /> <!-- INFO USER -->
+            android:exported="false" />
         <activity
             android:name=".upload.InforAge"
             android:exported="false" />
@@ -86,7 +79,7 @@
             android:exported="false" />
         <activity
             android:name=".upload.InforWeight"
-            android:exported="false" /> <!-- MAIN APP -->
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
@@ -99,9 +92,16 @@
         <activity
             android:name=".SavedRecipesActivity"
             android:exported="false" />
+
         <activity
             android:name=".Onboarding1Activity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".AccountSettingsActivity"
             android:exported="false" />

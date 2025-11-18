@@ -153,32 +153,112 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Stats Cards -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="16dp">
 
-                <!-- Points -->
-                <LinearLayout android:layout_width="0dp" android:layout_height="100dp" android:layout_weight="1" android:layout_marginEnd="8dp" android:orientation="vertical" android:background="@drawable/stats_card_background" android:padding="12dp" android:gravity="center">
-                    <TextView android:text="" android:textSize="28sp" />
-                    <TextView android:id="@+id/pointsText" android:layout_marginTop="4dp" android:text="17" android:textColor="@android:color/black" android:textSize="20sp" android:textStyle="bold"/>
-                    <TextView android:text="Điểm tuần này" android:textColor="#666666" android:textSize="12sp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/stats_card_background"
+                    android:padding="12dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⭐"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/pointsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="17"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Điểm tuần này"
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
-                <!-- Weight -->
-                <LinearLayout android:layout_width="0dp" android:layout_height="100dp" android:layout_weight="1" android:layout_marginHorizontal="4dp" android:orientation="vertical" android:background="@drawable/stats_card_background" android:padding="12dp" android:gravity="center">
-                    <TextView android:text="" android:textSize="28sp" />
-                    <TextView android:id="@+id/weightText" android:layout_marginTop="4dp" android:text="68kg" android:textColor="@android:color/black" android:textSize="20sp" android:textStyle="bold"/>
-                    <TextView android:text="Cân nặng" android:textColor="#666666" android:textSize="12sp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="4dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/stats_card_background"
+                    android:padding="12dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚖️"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/weightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="68kg"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cân nặng"
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
-                <!-- BMI -->
-                <LinearLayout android:layout_width="0dp" android:layout_height="100dp" android:layout_weight="1" android:layout_marginStart="8dp" android:orientation="vertical" android:background="@drawable/stats_card_background" android:padding="12dp" android:gravity="center">
-                    <TextView android:text="❤️" android:textSize="28sp" />
-                    <TextView android:id="@+id/bmiText" android:layout_marginTop="4dp" android:text="25.4" android:textColor="@android:color/black" android:textSize="20sp" android:textStyle="bold"/>
-                    <TextView android:text="Chỉ số BMI" android:textColor="#666666" android:textSize="12sp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/stats_card_background"
+                    android:padding="12dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❤️"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/bmiText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="25.4"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chỉ số BMI"
+                        android:textColor="#666666"
+                        android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -226,26 +306,80 @@
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_nav_bg"
-        android:elevation="10dp"
+        android:elevation="8dp"
+        android:gravity="center"
         android:orientation="horizontal"
+        android:paddingStart="16dp"
         android:paddingTop="8dp"
-        android:paddingBottom="12dp">
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
 
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-            <ImageView android:id="@+id/homeIcon" android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" app:srcCompat="@drawable/ic_home" app:tint="#888888" />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/homeIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_home" />
         </FrameLayout>
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-            <ImageView android:id="@+id/workoutIcon" android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" app:srcCompat="@drawable/ic_workout" app:tint="#888888" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/workoutIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_workout" />
         </FrameLayout>
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-            <ImageView android:id="@+id/recipeIcon" android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="center" app:srcCompat="@drawable/ic_recipe" app:tint="#888888" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/recipeIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_recipe" />
         </FrameLayout>
-        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-            <ImageView android:id="@+id/profileIcon" android:layout_width="52dp" android:layout_height="52dp" android:layout_gravity="center" app:srcCompat="@drawable/ic_proflie" app:tint="#FF8C42" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:padding="12dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_proflie" />
         </FrameLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
