@@ -7,6 +7,8 @@
     import androidx.activity.EdgeToEdge;
     import androidx.appcompat.app.AppCompatActivity;
 
+    import com.example.app_selfcare.upload.InforSex;
+
     public class RegisterActivity extends AppCompatActivity {
 
         @Override

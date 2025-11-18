@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.app_selfcare.upload.InforAge;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Nút Đăng nhập → Home
         findViewById(R.id.btnLogin).setOnClickListener(v -> {
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            startActivity(new Intent(LoginActivity.this, InforAge.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish(); // Đóng Login để không quay lại
         });
