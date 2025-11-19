@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-=======
-    <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Androi_Client" vcs="Git" />
->>>>>>> 2021477ed49962dc9840ea8acb2838fb24f3fccb
   </component>
 </project>
