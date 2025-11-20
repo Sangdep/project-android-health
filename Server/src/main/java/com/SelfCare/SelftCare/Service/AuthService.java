@@ -1,6 +1,7 @@
 package com.SelfCare.SelftCare.Service;
 
 import com.SelfCare.SelftCare.DTO.Request.UserLoginRequest;
+import com.SelfCare.SelftCare.DTO.Request.UserResetPasswordRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserLoginResponse;
 import com.SelfCare.SelftCare.Entity.User;
 import com.SelfCare.SelftCare.Exception.AppException;
@@ -32,6 +33,8 @@ import java.util.StringJoiner;
 @Slf4j
 public class AuthService {
     UserRepository userRepository;
+    MailService mailService;
+    PasswordEncoder passwordEncoder;
 
     @NonFinal
     @Value("${jwt.signerKey}")
@@ -99,4 +102,28 @@ public class AuthService {
         }
         return stringJoiner.toString();
     }
+
+
+    public void resetPassword(UserResetPasswordRequest request) {
+
+        String email=request.getEmail();
+        String newPassword=request.getNewPassword();
+        // Kiểm tra đã xác minh OTP chưa
+        if (!mailService.isOtpVerified(email)) {
+            throw new AppException(ErrorCode.INVALID_OTP); // hoặc tạo thêm ErrorCode như "OTP_NOT_VERIFIED"
+        }
+
+        // Kiểm tra email có tồn tại không
+        var user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new AppException(ErrorCode.EMAIL_NOT_FOUND));
+
+        // Mã hóa mật khẩu mới
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        // Dọn dẹp OTP sau khi reset thành công
+        mailService.clearOtp(email);
+    }
+
+
 }

@@ -12,6 +12,7 @@ import com.SelfCare.SelftCare.Repository.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,7 @@ public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
     PasswordEncoder passwordEncoder;
+
 
 
     public UserResponse userRegister(UserRegisterRequest request)
@@ -58,5 +60,6 @@ public class UserService {
         return userMapper.toUserResponse(save);
 
     }
+
 
 }
