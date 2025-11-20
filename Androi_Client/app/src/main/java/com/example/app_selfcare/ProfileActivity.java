@@ -73,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
         entries.add(new BarEntry(5, 78f));
         entries.add(new BarEntry(6, 88f));
 
-        BarDataSet dataSet = new BarDataSet(entries, "Điểm");
+        BarDataSet dataSet = new BarDataSet(entries, "Tiến độ");
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         dataSet.setValueTextSize(12f);
 

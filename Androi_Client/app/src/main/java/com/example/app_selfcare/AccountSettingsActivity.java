@@ -86,8 +86,20 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        helpLayout.setOnClickListener(null);
-        signOutButton.setOnClickListener(null);
+        helpLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountSettingsActivity.this, HelpActivity.class);
+                startActivity(intent);
+            }
+        });
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountSettingsActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
