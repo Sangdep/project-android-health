@@ -64,17 +64,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp"
+                android:background="@android:color/white"
                 android:gravity="center_horizontal"
-                android:background="@android:color/white">
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <ImageView
                     android:id="@+id/profileImage"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_proflie"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_proflie" />
 
                 <TextView
                     android:id="@+id/userName"
@@ -117,7 +117,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Biểu đồ điểm"
+                        android:text="Tiến độ"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -128,13 +128,13 @@
                         android:text="Tuần này"
                         android:textColor="#FF8C42"
                         android:textSize="14sp" />
-                </LinearLayout>
 
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/chartView"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/chartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
                 <!-- Week Labels -->
                 <LinearLayout
@@ -152,7 +152,27 @@
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="CN" android:textAlignment="center" android:textSize="12sp" android:textColor="#666666"/>
                 </LinearLayout>
             </LinearLayout>
+            <!-- Update Info Button -->
+            <LinearLayout
+                android:id="@+id/updateInfor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Cập nhật trạng thái mỗi tuần"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -173,22 +193,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="⭐"
-                        android:textSize="28sp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/pointsText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="17"
+                        android:text="Tăng cân"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Điểm tuần này"
+                        android:layout_height="15dp"
+                        android:text="Mục tiêu"
                         android:textColor="#666666"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -207,22 +227,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="⚖️"
-                        android:textSize="28sp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/weightText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="68kg"
+                        android:text="Tốt"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cân nặng"
+                        android:layout_height="15dp"
+                        android:text="Tình trạng"
                         android:textColor="#666666"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -241,7 +261,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="❤️"
-                        android:textSize="28sp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/bmiText"
@@ -255,49 +275,13 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="15dp"
                         android:text="Chỉ số BMI"
                         android:textColor="#666666"
                         android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Update Info Button -->
-            <LinearLayout
-                android:id="@+id/updateInfor"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="16dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:background="@drawable/menu_item_background"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    app:srcCompat="@drawable/ic_edit"
-                    app:tint="@android:color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="16dp"
-                    android:text="Cập nhật thông tin và mục tiêu"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat="@drawable/ic_arrow_right"
-                    app:tint="#666666" />
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

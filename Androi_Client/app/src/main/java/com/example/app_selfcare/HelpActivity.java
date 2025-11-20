@@ -19,17 +19,11 @@ public class HelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-        // Nút back
-        findViewById(R.id.backButton).setOnClickListener(v -> finish());
+        Intent intent = new Intent(HelpActivity.this, AccountSettingsActivity.class);
+         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+         startActivity(intent);
+         finish();
 
-        // Hiển thị version
-        TextView tvVersion = findViewById(R.id.tvVersion);
-        try {
-            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            tvVersion.setText(pInfo.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
-            tvVersion.setText("?.?.?");
-        }
 
     }
 
