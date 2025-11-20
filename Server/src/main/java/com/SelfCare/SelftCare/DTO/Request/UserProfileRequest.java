@@ -3,6 +3,7 @@ package com.SelfCare.SelftCare.DTO.Request;
 import com.SelfCare.SelftCare.Enum.Gender;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
@@ -17,4 +18,5 @@ public class UserProfileRequest {
     Double height;
     Double weight;
     String healthGoal;
+
 }

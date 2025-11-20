@@ -1,6 +1,7 @@
 package com.SelfCare.SelftCare.Controller;
 
 import com.SelfCare.SelftCare.DTO.ApiResponse;
+import com.SelfCare.SelftCare.DTO.Request.UserProfileRequest;
 import com.SelfCare.SelftCare.DTO.Request.UserRegisterRequest;
 import com.SelfCare.SelftCare.DTO.Response.UserResponse;
 import com.SelfCare.SelftCare.Service.UserService;
@@ -31,4 +32,6 @@ public class UserController {
                 .result(userService.userRegister(request))
                 .build();
     }
+
+
 }

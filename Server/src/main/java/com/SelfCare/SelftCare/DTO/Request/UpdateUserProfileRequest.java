@@ -1,6 +1,7 @@
 package com.SelfCare.SelftCare.DTO.Request;
 
 import com.SelfCare.SelftCare.Enum.Gender;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -16,16 +17,17 @@ import java.time.LocalDate;
 @Builder
 public class UpdateUserProfileRequest {
 
-
-    MultipartFile avatar;
-    @NotNull
-    LocalDate dateOfBirth;
     @NotNull
     Gender gender;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    LocalDate dateOfBirth;
     @NotNull
     Double height;
     @NotNull
     Double weight;
     @NotBlank
     String healthGoal;
+    MultipartFile avatar;
+
+
 }
