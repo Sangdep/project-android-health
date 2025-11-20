@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Header giống hệt màn settings -->
+    <LinearLayout
+        android:background="@drawable/header_nav_bg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="30dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_button_style"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_backk"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Trợ giúp &amp; Hỗ trợ"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 1. Câu hỏi thường gặp -->
+        <LinearLayout android:id="@+id/faqLayout"
+            style="@android:style/Widget.Material.ListPopupWindow"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="@drawable/menu_item_background"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                android:background="@drawable/ic_question"
+                app:tint="@android:color/white"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:text="Câu hỏi thường gặp (FAQ)"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                app:srcCompat="@android:drawable/ic_menu_manage"
+                app:tint="#888888"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/guideLayout"
+            android:layout_width="match_parent" android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="16dp" android:background="@drawable/menu_item_background"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                android:background="@drawable/ic_proflie"
+                app:tint="@android:color/white"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:text="Hướng dẫn sử dụng ứng dụng"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                app:srcCompat="@android:drawable/ic_menu_manage"
+                app:tint="#888888"/>
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/callHotlineLayout"
+            android:layout_width="match_parent" android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="16dp" android:background="@drawable/menu_item_background"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                android:src="@android:drawable/stat_notify_chat"
+                app:tint="@android:color/white"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:text="Chat ngay với chúng tôi qua Zalo"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                app:srcCompat="@android:drawable/ic_menu_call"
+                app:tint="#888888"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/feedbackLayout"
+            android:layout_width="match_parent" android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="16dp" android:background="@drawable/menu_item_background"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                android:background="@drawable/ic_bell"
+                app:tint="@android:color/white"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:text="Gửi phản hồi / Báo lỗi"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                app:srcCompat="@android:drawable/ic_menu_send"
+                app:tint="#888888"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/policyLayout"
+            android:layout_width="match_parent" android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="16dp" android:background="@drawable/menu_item_background"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                android:background="@drawable/ic_lockk"
+                app:tint="@android:color/white"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:text="Chính sách bảo mật &amp; Điều khoản"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" android:textStyle="bold"/>
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                app:srcCompat="@android:drawable/ic_menu_info_details"
+                app:tint="#888888"/>
+        </LinearLayout>
+
+        <!-- 7. Phiên bản ứng dụng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Phiên bản ứng dụng"
+                android:textColor="#666666"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.0.0"
+                android:textColor="#444444"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
