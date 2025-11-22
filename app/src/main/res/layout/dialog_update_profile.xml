@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginBottom="30dp"
+    android:background="@drawable/dialog_background"
+    android:elevation="16dp"
+    android:orientation="vertical"
+    android:padding="28dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cập nhật thông tin sức khỏe"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A1A"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Cân nặng -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxStrokeColor="#FF8C42"
+        app:hintTextColor="#666666"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cân nặng (kg)"
+            android:inputType="numberDecimal"
+            android:text="65.5"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Chiều cao -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:boxStrokeColor="#FF8C42"
+        app:hintTextColor="#666666"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chiều cao (cm)"
+            android:inputType="number"
+            android:text="170"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Mục tiêu -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mục tiêu của bạn"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="12dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbGain"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Tăng cân"
+            android:textSize="15sp"
+            android:checked="true" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbMaintain"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Giữ cân"
+            android:textSize="15sp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbLose"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Giảm cân"
+            android:textSize="15sp" />
+    </RadioGroup>
+
+    <!-- BMI Result -->
+    <TextView
+        android:id="@+id/tvBMIResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI: 22.7 - Bình thường"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF8C42"
+        android:gravity="center"
+        android:background="#10FF8C42"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Nút Hành động -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Nút Hủy -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="56dp"
+            android:text="Hủy"
+            android:textColor="#666666"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@null"
+            android:background="@drawable/button_gray_rounded"
+            app:cornerRadius="16dp"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1.5dp" />
+
+        <!-- Khoảng cách -->
+        <View
+            android:layout_width="16dp"
+            android:layout_height="1dp" />
+
+        <!-- Nút Lưu -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="56dp"
+            android:text="Lưu lại"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@null"
+            android:background="@drawable/button_orange_rounded"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+
+</LinearLayout>
