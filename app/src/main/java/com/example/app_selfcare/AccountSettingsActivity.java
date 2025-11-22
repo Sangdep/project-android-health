@@ -86,6 +86,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
         helpLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +101,10 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+=======
+        helpLayout.setOnClickListener(null);
+        signOutButton.setOnClickListener(null);
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     }
 
 }

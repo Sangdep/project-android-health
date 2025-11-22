@@ -19,4 +19,11 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_margin">16dp</item>
     </style>
+<<<<<<< HEAD
+=======
+
+    <style name="NumberPickerTheme">
+        <item name="colorControlNormal">#FF6B35</item>
+    </style>
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 </resources>

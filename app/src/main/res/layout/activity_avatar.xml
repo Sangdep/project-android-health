@@ -81,7 +81,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="Select your Avatar"
+=======
+        android:text="Chọn Avatar"
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         android:textColor="#333333"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -91,7 +95,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="We have 23 custom premade avatars, or you can upload profile locally"
+=======
+        android:text="Chọn avater hiện có hoặc tải ảnh lên từ điện thoại"
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         android:textColor="#666666"
         android:textSize="14sp"
         android:gravity="center"
@@ -133,7 +141,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="or Upload from Local File"
+=======
+            android:text="Tải ảnh lên từ điện thoại"
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
             android:textColor="#333333"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -151,7 +163,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+<<<<<<< HEAD
             android:text="Upload"
+=======
+            android:text="Tải"
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
             android:textColor="#FF8C42"
             android:layout_marginTop="16dp" />
     </LinearLayout>
@@ -162,7 +178,11 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/orange_button_background"
+<<<<<<< HEAD
         android:text="Continue →"
+=======
+        android:text="Hoàn thành →"
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:layout_margin="16dp"

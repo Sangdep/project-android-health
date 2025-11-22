@@ -12,8 +12,13 @@
     <color name="background_light">#f8f8f8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
 
     <!-- MÀU BẠN ĐANG THIẾU – DÙNG TRONG NHIỀU XML -->
+=======
+    <color name="light_orange">#FFF0E6</color>
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     <color name="orange_text_icon">#FF7F3E</color> <!-- Dùng cho text, icon, page indicator -->
     <color name="light_orange_background">#FFF3E0</color>
 </resources>

@@ -5,10 +5,21 @@
     <string name="assessment_title">Assessment</string>
 
     <!-- Page indicators (phải đúng với XML: "1/6", không phải "1 of 6") -->
+<<<<<<< HEAD
     <string name="page_indicator_1_of_6">1/6</string>
     <string name="page_indicator_2_of_6">2/6</string>
     <string name="page_indicator_3_of_6">3/6</string>
     <string name="page_indicator_4_of_6">4/6</string>
+=======
+    <!-- Page indicators cho các màn hình thông tin -->
+    <string name="page_indicator_1_of_6">1 of 6</string>
+    <string name="page_indicator_2_of_6">2 of 6</string>
+    <string name="page_indicator_3_of_6">3 of 6</string>
+    <string name="page_indicator_4_of_6">4 of 6</string>
+    <string name="page_indicator_5_of_6">5 of 6</string>
+    <string name="page_indicator_6_of_6">6 of 6</string>
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
     <!-- Weight screen -->
     <string name="current_weight_question">Cân nặng của bạn hiện tại?</string>
@@ -23,6 +34,13 @@
     <string name="default_height_display">165 Cm</string>
     <string name="height_ruler_description">Thước đo chiều cao</string>
 
+<<<<<<< HEAD
+=======
+    <string name="assessment">Thiết lập</string>
+    <string name="question_age">Tuổi của bạn?</string>
+    <string name="continue_button">Continue</string>
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     <!-- Buttons -->
     <string name="continue_button_text">Tiếp tục</string>
 
@@ -37,6 +55,10 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus

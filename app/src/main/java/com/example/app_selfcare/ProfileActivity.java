@@ -1,5 +1,6 @@
 package com.example.app_selfcare;
 
+<<<<<<< HEAD
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -15,6 +16,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+=======
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +35,10 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+<<<<<<< HEAD
 import com.google.android.material.textfield.TextInputEditText;
+=======
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
 import java.util.ArrayList;
 
@@ -35,13 +46,20 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ImageView btnBack, btnSettings;
     private ImageView homeIcon, workoutIcon, recipeIcon, profileIcon;
+<<<<<<< HEAD
     private LinearLayout updateInfor;
+=======
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     private BarChart chartView;
     private TextView pointsText, weightText, bmiText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile);
 
@@ -58,8 +76,13 @@ public class ProfileActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
+<<<<<<< HEAD
     @SuppressLint("WrongViewCast")
     void initViews() {
+=======
+    void initViews() {
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         chartView = findViewById(R.id.chartView);
         pointsText = findViewById(R.id.pointsText);
         weightText = findViewById(R.id.weightText);
@@ -72,7 +95,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         btnSettings = findViewById(R.id.btnSettings);
         btnBack = findViewById(R.id.btnBack);
+<<<<<<< HEAD
         updateInfor = findViewById(R.id.updateInfor); // Đây là LinearLayout bạn đang dùng
+=======
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     }
 
     private void setupChart() {
@@ -85,7 +111,11 @@ public class ProfileActivity extends AppCompatActivity {
         entries.add(new BarEntry(5, 78f));
         entries.add(new BarEntry(6, 88f));
 
+<<<<<<< HEAD
         BarDataSet dataSet = new BarDataSet(entries, "Tiến độ");
+=======
+        BarDataSet dataSet = new BarDataSet(entries, "Điểm");
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         dataSet.setValueTextSize(12f);
 
@@ -101,8 +131,13 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void setupStats() {
+<<<<<<< HEAD
         pointsText.setText("Tăng cân");
         weightText.setText("68 kg");
+=======
+        pointsText.setText("17");
+        weightText.setText("68kg");
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         bmiText.setText("25.4");
     }
 
@@ -114,8 +149,15 @@ public class ProfileActivity extends AppCompatActivity {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
+<<<<<<< HEAD
         // MỞ DIALOG CẬP NHẬT THÔNG TIN
         updateInfor.setOnClickListener(v -> showUpdateProfileDialog());
+=======
+        findViewById(R.id.updateInfor).setOnClickListener(v -> {
+            // TODO: Chuyển sang màn hình cập nhật thông tin
+            // startActivity(new Intent(this, UpdateProfileActivity.class));
+        });
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
         homeIcon.setOnClickListener(v -> {
             startActivity(new Intent(this, HomeActivity.class));
@@ -135,6 +177,7 @@ public class ProfileActivity extends AppCompatActivity {
             finish();
         });
 
+<<<<<<< HEAD
         profileIcon.setOnClickListener(v -> { /* Đã ở trang Profile */ });
     }
 
@@ -225,5 +268,8 @@ public class ProfileActivity extends AppCompatActivity {
                 tv.setText(String.format("BMI: %.1f - %s", bmi, status));
             }
         } catch (Exception ignored) { }
+=======
+        profileIcon.setOnClickListener(v -> { /* Đã ở đây */ });
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     }
 }

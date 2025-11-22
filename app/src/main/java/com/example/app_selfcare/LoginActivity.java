@@ -2,9 +2,12 @@ package com.example.app_selfcare;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.widget.Toast;
 import android.widget.Button;
 import android.widget.EditText;
+=======
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+<<<<<<< HEAD
 import com.example.app_selfcare.Data.Model.Request.UserLoginRequest;
 import com.example.app_selfcare.Data.Model.Response.ApiResponse;
 import com.example.app_selfcare.Data.Model.Response.UserLoginResponse;
@@ -29,36 +33,54 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail, edtPassword;
     private Button btnLogin;
 
+=======
+import com.example.app_selfcare.upload.InforAge;
+
+public class LoginActivity extends AppCompatActivity {
+
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tranglogin), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+<<<<<<< HEAD
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
         // Chuyển sang Register
+=======
+        // Link "Đăng ký" → Register
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         findViewById(R.id.txtRegister).setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
+<<<<<<< HEAD
 
         // Chuyển sang Forgot Password
+=======
+        // Trong onCreate() của LoginActivity
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         findViewById(R.id.txtForgotPassword).setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, ForgetPassword.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
+<<<<<<< HEAD
         // NÚT LOGIN
         btnLogin.setOnClickListener(v -> {
             doLogin();
@@ -124,3 +146,13 @@ public class LoginActivity extends AppCompatActivity {
                 .apply();
     }
 }
+=======
+        // Nút Đăng nhập → Home
+        findViewById(R.id.btnLogin).setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish(); // Đóng Login để không quay lại
+        });
+    }
+}
+>>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
