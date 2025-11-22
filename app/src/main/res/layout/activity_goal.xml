@@ -51,11 +51,7 @@
             android:id="@+id/textViewPageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:text="@string/page_indicator_1_of_6"
-=======
             android:text="@string/page_indicator_5_of_6"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
             android:textColor="@color/orange_text_icon"
             android:background="@drawable/rounded_corner_background_light_orange"
             android:paddingStart="10dp"
@@ -145,21 +141,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-<<<<<<< HEAD
-
-        <!-- Goal 2: Thử với trợ lý ảo (Selected) -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/goalVirtualAssistantLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_back_button_white"
-=======
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/goalPustWeightLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/goal_default_bg"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
             android:paddingStart="16dp"
             android:paddingTop="12dp"
             android:paddingEnd="12dp"
@@ -167,33 +153,6 @@
             android:layout_marginBottom="12dp">
 
             <ImageView
-<<<<<<< HEAD
-                android:id="@+id/iconVirtualAssistant"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:contentDescription="Icon trợ lý ảo"
-                android:src="@drawable/bg_button_black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="#1D1C1C" />
-
-            <TextView
-                android:id="@+id/textVirtualAssistant"
-                android:layout_width="234dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="12dp"
-                android:text="Tôi muốn giữ cân"
-                android:textColor="#212020"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/checkboxIncreaseStrength"
-                app:layout_constraintStart_toEndOf="@id/iconVirtualAssistant"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <CheckBox
-                android:id="@+id/checkboxIncreaseStrength"
-=======
                 android:id="@+id/iconPustWeight"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -220,7 +179,6 @@
 
             <CheckBox
                 android:id="@+id/checkboxPustWeight"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:buttonTint="#A1A1AA"
@@ -229,11 +187,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<<<<<<< HEAD
-=======
         <!-- Goal 2: Thử với trợ lý ảo (Selected) -->
 
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
         <!-- Goal 3: Tăng sức bền -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/goalIncreaseStrengthLayout"
@@ -267,20 +222,12 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 app:layout_constraintStart_toEndOf="@id/iconIncreaseStrength"
-<<<<<<< HEAD
-                app:layout_constraintEnd_toStartOf="@id/checkboxStrength"
-=======
                 app:layout_constraintEnd_toStartOf="@id/checkboxIncreaseStrength"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <CheckBox
-<<<<<<< HEAD
-                android:id="@+id/checkboxStrength"
-=======
                 android:id="@+id/checkboxIncreaseStrength"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:buttonTint="#A1A1AA"
