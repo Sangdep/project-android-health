@@ -51,7 +51,7 @@
             android:id="@+id/textViewPageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/page_indicator_2_of_6"
+            android:text="@string/page_indicator_4_of_6"
             android:textColor="@color/orange_text_icon"
             android:background="@drawable/rounded_corner_background_light_orange"
             android:paddingStart="10dp"
