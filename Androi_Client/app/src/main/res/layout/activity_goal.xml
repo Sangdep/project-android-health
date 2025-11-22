@@ -51,7 +51,7 @@
             android:id="@+id/textViewPageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/page_indicator_3_of_6"
+            android:text="@string/page_indicator_4_of_6"
             android:textColor="@color/orange_text_icon"
             android:background="@drawable/rounded_corner_background_light_orange"
             android:paddingStart="10dp"
@@ -141,13 +141,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Goal 2: Thử với trợ lý ảo (Selected) -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/goalVirtualAssistantLayout"
+            android:id="@+id/goalPustWeightLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_back_button_white"
+            android:background="@drawable/goal_default_bg"
             android:paddingStart="16dp"
             android:paddingTop="12dp"
             android:paddingEnd="12dp"
@@ -155,40 +153,41 @@
             android:layout_marginBottom="12dp">
 
             <ImageView
-                android:id="@+id/iconVirtualAssistant"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:contentDescription="Icon trợ lý ảo"
-                android:src="@drawable/bg_button_black"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/iconPustWeight"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_lose_weight_placeholder"
+                app:tint="#4B5563"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="#1D1C1C" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="Icon giảm cân"/>
 
             <TextView
-                android:id="@+id/textVirtualAssistant"
+                android:id="@+id/textPustWeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Tôi muốn giữ cân"
-                android:textColor="#212020"
+                android:text="Tôi muốn tăng cân"
+                android:textColor="#1F2937"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
-                app:layout_constraintStart_toEndOf="@id/iconVirtualAssistant"
-                app:layout_constraintEnd_toStartOf="@id/checkboxVirtualAssistant"
+                app:layout_constraintStart_toEndOf="@id/iconPustWeight"
+                app:layout_constraintEnd_toStartOf="@id/checkboxPustWeight"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <CheckBox
-                android:id="@+id/checkboxVirtualAssistant"
+                android:id="@+id/checkboxPustWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                app:buttonTint="#FFFFFF"
+                app:buttonTint="#A1A1AA"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Goal 2: Thử với trợ lý ảo (Selected) -->
 
         <!-- Goal 3: Tăng sức bền -->
         <androidx.constraintlayout.widget.ConstraintLayout
