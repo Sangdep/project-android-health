@@ -6,11 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3F4F6"
-<<<<<<< HEAD
-    tools:context=".infor_sex">
-=======
     tools:context=".upload.InforSex">
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
 
     <!-- Top App Bar (Tái sử dụng và điều chỉnh) -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,11 +49,7 @@
             android:id="@+id/textViewPageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:text="@string/page_indicator_4_of_6"
-=======
             android:text="@string/page_indicator_1_of_6"
->>>>>>> 558f613ff39e4eeddb5d81b0e1a1c898e64ffb1f
             android:textColor="@color/orange_text_icon"
             android:background="@drawable/rounded_corner_background_light_orange"
             android:paddingStart="10dp"
