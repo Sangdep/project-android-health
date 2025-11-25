@@ -1,41 +1,37 @@
 package com.SelfCare.SelftCare.Service;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
-
+@RequiredArgsConstructor // Lombok tự động tạo constructor cho biến final (cloudinary)
 public class FileUploadsService {
 
-    @Value("${file.upload-dir}")
-    private String uploadDir;
+    private final Cloudinary cloudinary;
 
     public String uploadImage(MultipartFile file) throws IOException {
-        if (file.isEmpty()) {
-            throw new IllegalArgumentException("File rỗng!");
+        // 1. Kiểm tra file rỗng
+        if (file == null || file.isEmpty()) {
+            return null; // Trả về null nếu không có file, để Service gọi nó tự xử lý
         }
 
-        // Tạo thư mục nếu chưa có
-        Path uploadPath = Paths.get(uploadDir);
-        if (!Files.exists(uploadPath)) {
-            Files.createDirectories(uploadPath);
-        }
+        // 2. Upload lên Cloudinary
+        // "public_id": Đặt tên file là UUID để không bị trùng lặp trên Cloudinary
+        // "resource_type": "auto" để tự nhận diện là ảnh/video
+        Map uploadResult = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.asMap(
+                "public_id", UUID.randomUUID().toString(),
+                "resource_type", "auto",
+                "folder", "user_avatars" // (Tuỳ chọn) Gom ảnh vào thư mục riêng cho gọn
+        ));
 
-        // Tạo tên file duy nhất
-        String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
-        Path filePath = uploadPath.resolve(fileName);
-
-        // Ghi file
-        Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
-
-        return "/uploads/" + fileName;
+        // 3. Lấy đường dẫn ảnh HTTPS (secure_url) trả về
+        return uploadResult.get("secure_url").toString();
     }
 }

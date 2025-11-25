@@ -38,3 +38,8 @@ jwt:
 
 file:
   upload-dir: uploads/
+
+cloudinary:
+  cloud-name: "dg9ke49vm"
+  api-key: "958314775373525"
+  api-secret: "eZpxIv1RZm4k5QzEiSgz1iUmQIQ"

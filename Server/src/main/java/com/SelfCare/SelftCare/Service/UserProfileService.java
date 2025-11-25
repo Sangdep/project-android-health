@@ -35,35 +35,47 @@ public class UserProfileService {
 
     @Transactional
     public UserResponse updateProfile(@Valid UpdateUserProfileRequest request) throws IOException {
+        // 1. Lấy thông tin User hiện tại từ Security Context
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
 
+        // 2. Lấy Profile, nếu chưa có thì có thể tạo mới (tuỳ logic app bạn, ở đây mình giữ nguyên throw exception)
         UserProfile profile = user.getUserProfile();
-        if (profile == null) {
-            throw new AppException(ErrorCode.PROFILE_NOT_FOUND);
-        }
 
 
+        // 3. Xử lý Upload Avatar (Chỉ upload nếu người dùng có gửi file)
         if (request.getAvatar() != null && !request.getAvatar().isEmpty()) {
-            String avatarUrl = fileUploadsService.uploadImage(request.getAvatar());
-            profile.setAvatarUrl(avatarUrl);
+            try {
+                // Gọi hàm upload Cloudinary vừa viết
+                String avatarUrl = fileUploadsService.uploadImage(request.getAvatar());
+
+                // Lưu link ảnh (https://res.cloudinary...) vào DB
+                profile.setAvatarUrl(avatarUrl);
+            } catch (IOException e) {
+                // Log lỗi nếu cần thiết và ném ra ngoại lệ để Controller xử lý
+                throw new IOException("Lỗi khi upload ảnh lên Cloudinary: " + e.getMessage());
+            }
         }
 
+        // 4. Cập nhật các thông tin khác
+        // Mẹo: Nên kiểm tra null trước khi set để tránh ghi đè null vào dữ liệu cũ (nếu request gửi thiếu trường)
+        if (request.getDateOfBirth() != null) profile.setDateOfBirth(request.getDateOfBirth());
+        if (request.getGender() != null) profile.setGender(request.getGender());
+        if (request.getHeight() != null) profile.setHeight(request.getHeight());
+        if (request.getWeight() != null) profile.setWeight(request.getWeight());
+        if (request.getHealthGoal() != null) profile.setHealthGoal(request.getHealthGoal());
 
-        profile.setDateOfBirth(request.getDateOfBirth());
-        profile.setGender(request.getGender());
-        profile.setHeight(request.getHeight());
-        profile.setWeight(request.getWeight());
-        profile.setHealthGoal(request.getHealthGoal());
+        // 5. Lưu vào DB
         userProfileRepository.save(profile);
 
+        // 6. Trả về Response
         return UserResponse.builder()
                 .id(user.getId())
                 .email(user.getEmail())
                 .fullName(user.getFullName())
                 .userProfileResponse(UserProfileResponse.builder()
-                        .avatarUrl(profile.getAvatarUrl())
+                        .avatarUrl(profile.getAvatarUrl()) // Trả về link Cloudinary
                         .dateOfBirth(profile.getDateOfBirth())
                         .gender(profile.getGender())
                         .height(profile.getHeight())
@@ -72,7 +84,6 @@ public class UserProfileService {
                         .build())
                 .build();
     }
-
 
 
 
