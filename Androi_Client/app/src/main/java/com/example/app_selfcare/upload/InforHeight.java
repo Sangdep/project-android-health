@@ -83,7 +83,21 @@ public class InforHeight extends AppCompatActivity {
         if (btnContinue != null) {
             btnContinue.setOnClickListener(v -> {
                 Intent intent = new Intent(InforHeight.this, InforWeight.class);
+                // Pass forward data from previous activities - always pass, even if null
+                String gender = getIntent().getStringExtra("user_gender");
+                if (gender != null) {
+                    intent.putExtra("user_gender", gender);
+                }
+                int age = getIntent().getIntExtra("user_age", -1);
+                if (age != -1) {
+                    intent.putExtra("user_age", age);
+                }
+                // Pass current data
                 intent.putExtra("user_height_cm", Math.round(currentHeightCm));
+                
+                // Debug log
+                android.util.Log.d("InforHeight", "Passing gender: " + gender);
+                
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             });

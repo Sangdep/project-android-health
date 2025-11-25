@@ -15,10 +15,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.app_selfcare.Data.Model.Request.UserLoginRequest;
 import com.example.app_selfcare.Data.Model.Response.ApiResponse;
 import com.example.app_selfcare.Data.Model.Response.UserLoginResponse;
+import com.example.app_selfcare.Data.Model.Response.UserResponse;
 import com.example.app_selfcare.Data.remote.ApiClient;
 import com.example.app_selfcare.Data.remote.ApiService;
 
 import com.example.app_selfcare.upload.InforAge;
+import com.example.app_selfcare.upload.InforSex;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -96,10 +98,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
-                        // Chuyển sang màn hình InforAge
-                        startActivity(new Intent(LoginActivity.this, InforAge.class));
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                        finish();
+                        // Kiểm tra xem user đã có profile chưa
+                        checkUserProfileAndNavigate();
 
                     } else {
                         Toast.makeText(LoginActivity.this, "Sai email hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
@@ -122,5 +122,53 @@ public class LoginActivity extends AppCompatActivity {
                 .edit()
                 .putString("TOKEN", token)
                 .apply();
+    }
+
+    private void checkUserProfileAndNavigate() {
+        ApiService api = ApiClient.getClientWithToken(this).create(ApiService.class);
+        
+        api.getUserProfile().enqueue(new Callback<ApiResponse<UserResponse>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<UserResponse>> call, Response<ApiResponse<UserResponse>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    ApiResponse<UserResponse> apiRes = response.body();
+                    
+                    if (apiRes.getCode() == 200 && apiRes.getResult() != null) {
+                        UserResponse userResponse = apiRes.getResult();
+                        
+                        // Kiểm tra xem user đã có profile chưa
+                        if (userResponse.getUserProfileResponse() == null || 
+                            userResponse.getUserProfileResponse().getGender() == null) {
+                            // Chưa có profile → chuyển đến trang upload
+                            startActivity(new Intent(LoginActivity.this, InforSex.class));
+                        } else {
+                            // Đã có profile → chuyển đến HomeActivity
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        }
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        finish();
+                    } else {
+                        // Nếu lỗi, mặc định chuyển đến trang upload
+                        startActivity(new Intent(LoginActivity.this, InforSex.class));
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        finish();
+                    }
+                } else {
+                    // Nếu lỗi, mặc định chuyển đến trang upload
+                    startActivity(new Intent(LoginActivity.this, InforSex.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<UserResponse>> call, Throwable t) {
+                // Nếu lỗi kết nối, mặc định chuyển đến trang upload
+                android.util.Log.e("LoginActivity", "Error checking profile: " + t.getMessage());
+                startActivity(new Intent(LoginActivity.this, InforSex.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        });
     }
 }

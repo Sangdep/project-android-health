@@ -48,7 +48,17 @@ public class InforAge extends AppCompatActivity {
 
         findViewById(R.id.buttonContinue).setOnClickListener(v -> {
             Intent intent = new Intent(InforAge.this, InforHeight.class);
+            // Pass forward data from previous activities - always pass, even if null
+            String gender = getIntent().getStringExtra("user_gender");
+            if (gender != null) {
+                intent.putExtra("user_gender", gender);
+            }
+            // Pass current data
             intent.putExtra("user_age", selectedAge);
+            
+            // Debug log
+            android.util.Log.d("InforAge", "Passing gender: " + gender);
+            
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });

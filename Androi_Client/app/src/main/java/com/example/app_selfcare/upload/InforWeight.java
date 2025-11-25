@@ -69,7 +69,25 @@ public class InforWeight extends AppCompatActivity {
         // Nút Tiếp tục → InforGoal
         findViewById(R.id.buttonContinue).setOnClickListener(v -> {
             Intent intent = new Intent(InforWeight.this, InforGoal.class);
+            // Pass forward data from previous activities - always pass, even if null
+            String gender = getIntent().getStringExtra("user_gender");
+            if (gender != null) {
+                intent.putExtra("user_gender", gender);
+            }
+            int age = getIntent().getIntExtra("user_age", -1);
+            if (age != -1) {
+                intent.putExtra("user_age", age);
+            }
+            int height = getIntent().getIntExtra("user_height_cm", -1);
+            if (height != -1) {
+                intent.putExtra("user_height_cm", height);
+            }
+            // Pass current data
             intent.putExtra("user_weight_kg", Math.round(currentWeightKg));
+            
+            // Debug log
+            android.util.Log.d("InforWeight", "Passing gender: " + gender);
+            
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });

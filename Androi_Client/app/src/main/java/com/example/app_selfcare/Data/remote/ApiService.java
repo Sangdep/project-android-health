@@ -3,14 +3,38 @@ package com.example.app_selfcare.Data.remote;
 import com.example.app_selfcare.Data.Model.Request.UserLoginRequest;
 import com.example.app_selfcare.Data.Model.Response.ApiResponse;
 import com.example.app_selfcare.Data.Model.Response.UserLoginResponse;
+import com.example.app_selfcare.Data.Model.Response.UserResponse;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
+import retrofit2.http.PartMap;
+
+import java.util.Map;
 
 public interface ApiService {
 
     @POST("app/auth/login")
     Call<ApiResponse<UserLoginResponse>> login(@Body UserLoginRequest request);
+
+    @retrofit2.http.GET("app/userProfile/get")
+    Call<ApiResponse<UserResponse>> getUserProfile();
+
+    @Multipart
+    @PUT("app/userProfile/update")
+    Call<ApiResponse<UserResponse>> updateProfile(
+            @Part("gender") RequestBody gender,
+            @Part("dateOfBirth") RequestBody dateOfBirth,
+            @Part("height") RequestBody height,
+            @Part("weight") RequestBody weight,
+            @Part("healthGoal") RequestBody healthGoal,
+            @Part MultipartBody.Part avatar
+    );
 
 }
