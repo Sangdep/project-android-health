@@ -1,11 +1,11 @@
 package com.SelfCare.SelftCare.DTO.Request;
 
 import com.SelfCare.SelftCare.Enum.Gender;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
@@ -19,7 +19,7 @@ public class UpdateUserProfileRequest {
 
     @NotNull
     Gender gender;
-    @JsonFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     LocalDate dateOfBirth;
     @NotNull
     Double height;
