@@ -6,9 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3F4F6"
-    tools:context=".infor_sex">
+    tools:context=".upload.InforSex">
 
-    <!-- Top App Bar (Tái sử dụng và điều chỉnh) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topAppBar"
         android:layout_width="0dp"
@@ -49,7 +48,7 @@
             android:id="@+id/textViewPageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/page_indicator_4_of_6"
+            android:text="@string/page_indicator_1_of_6"
             android:textColor="@color/orange_text_icon"
             android:background="@drawable/rounded_corner_background_light_orange"
             android:paddingStart="10dp"
@@ -65,7 +64,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Question Text -->
     <TextView
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
@@ -80,7 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Gender Selection Container -->
     <RadioGroup
         android:id="@+id/radioGroupGender"
         android:layout_width="0dp"
@@ -93,8 +90,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Male Option -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardMale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,63 +98,60 @@
             app:cardElevation="0dp"
             app:cardBackgroundColor="#FFFFFF"
             android:layout_marginBottom="16dp"
-            app:strokeColor="#00000000"
-            app:strokeWidth="2dp"> <!-- Stroke sẽ được kích hoạt bằng code -->
+            app:strokeColor="#F97316"
+            app:strokeWidth="0dp"> <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="#A1A1AA"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-                <RadioButton
-                    android:id="@+id/radioMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonTint="#A1A1AA"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/iconMale"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_male_symbol"
+                app:tint="#4B5563"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/radioMale"
+                app:layout_constraintTop_toTopOf="@id/radioMale"
+                app:layout_constraintBottom_toBottomOf="@id/radioMale"
+                android:contentDescription="Male icon"/>
 
-                <ImageView
-                    android:id="@+id/iconMale"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_male_symbol"
-                    app:tint="#4B5563"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintStart_toEndOf="@id/radioMale"
-                    app:layout_constraintTop_toTopOf="@id/radioMale"
-                    app:layout_constraintBottom_toBottomOf="@id/radioMale"
-                    android:contentDescription="Male icon"/>
+            <TextView
+                android:id="@+id/textMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:textColor="#1F2937"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/iconMale"
+                app:layout_constraintTop_toTopOf="@id/radioMale"
+                app:layout_constraintBottom_toBottomOf="@id/radioMale"/>
 
-                <TextView
-                    android:id="@+id/textMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nam"
-                    android:textColor="#1F2937"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintStart_toEndOf="@id/iconMale"
-                    app:layout_constraintTop_toTopOf="@id/radioMale"
-                    app:layout_constraintBottom_toBottomOf="@id/radioMale"/>
+            <ImageView
+                android:id="@+id/imageMale"
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_male_fitness_placeholder"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <ImageView
-                    android:id="@+id/imageMale"
-                    android:layout_width="150dp"
-                    android:layout_height="130dp"
-                    android:src="@drawable/img_male_fitness_placeholder"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Female Option (Selected in image) -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFemale"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,69 +159,65 @@
             app:cardElevation="0dp"
             app:cardBackgroundColor="#FFFFFF"
             app:strokeColor="#F97316"
-            app:strokeWidth="2dp"> <!-- Viền cam được kích hoạt -->
+            app:strokeWidth="2dp"> <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="#F97316"
+                android:checked="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-                <RadioButton
-                    android:id="@+id/radioFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonTint="#F97316"
-                    android:checked="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/iconFemale"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_female_symbol"
+                app:tint="#F97316"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/radioFemale"
+                app:layout_constraintTop_toTopOf="@id/radioFemale"
+                app:layout_constraintBottom_toBottomOf="@id/radioFemale"
+                android:contentDescription="Female icon"/>
 
-                <ImageView
-                    android:id="@+id/iconFemale"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_female_symbol"
-                    app:tint="#F97316"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintStart_toEndOf="@id/radioFemale"
-                    app:layout_constraintTop_toTopOf="@id/radioFemale"
-                    app:layout_constraintBottom_toBottomOf="@id/radioFemale"
-                    android:contentDescription="Female icon"/>
+            <TextView
+                android:id="@+id/textFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ"
+                android:textColor="#F97316"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/iconFemale"
+                app:layout_constraintTop_toTopOf="@id/radioFemale"
+                app:layout_constraintBottom_toBottomOf="@id/radioFemale"/>
 
-                <TextView
-                    android:id="@+id/textFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nữ"
-                    android:textColor="#F97316"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintStart_toEndOf="@id/iconFemale"
-                    app:layout_constraintTop_toTopOf="@id/radioFemale"
-                    app:layout_constraintBottom_toBottomOf="@id/radioFemale"/>
-
-                <ImageView
-                    android:id="@+id/imageFemale"
-                    android:layout_width="150dp"
-                    android:layout_height="130dp"
-                    android:src="@drawable/img_female_fitness_placeholder"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/imageFemale"
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:src="@drawable/img_female_fitness_placeholder"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
     </RadioGroup>
 
-    <!-- Continue Button (Tái sử dụng) -->
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-
         android:layout_marginBottom="68dp"
         android:text="Tiếp tục"
         android:textAllCaps="false"
