@@ -32,7 +32,7 @@ public class InforSex extends AppCompatActivity {
     private Button buttonContinue;
     private ImageButton buttonBack;
 
-    private String selectedGender = "Nữ"; // Mặc định là Nữ
+    private String selectedGender = "FEMALE"; // Mặc định là Nữ
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +107,7 @@ public class InforSex extends AppCompatActivity {
     private void handleGenderSelection(boolean isMale) {
         if (isMale) {
             // --- CHỌN NAM ---
-            selectedGender = "Nam";
+            selectedGender = "MALE";
 
             // Logic checkbox: Bật Nam, Tắt Nữ (Phải làm thủ công vì RadioGroup không thấy được view con)
             radioMale.setChecked(true);
@@ -118,7 +118,7 @@ public class InforSex extends AppCompatActivity {
 
         } else {
             // --- CHỌN NỮ ---
-            selectedGender = "Nữ";
+            selectedGender = "FEMALE";
 
             // Logic checkbox: Bật Nữ, Tắt Nam
             radioFemale.setChecked(true);

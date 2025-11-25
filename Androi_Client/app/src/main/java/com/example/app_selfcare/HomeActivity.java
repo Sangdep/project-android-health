@@ -35,23 +35,23 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         // Bottom navigation
-        findViewById(R.id.homeIcon).setOnClickListener(v -> {
+        findViewById(R.id.navHome).setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         });
 
-        findViewById(R.id.workoutIcon).setOnClickListener(v -> {
+        findViewById(R.id.navWorkout).setOnClickListener(v -> {
             startActivity(new Intent(HomeActivity.this, WorkoutActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        findViewById(R.id.recipeIcon).setOnClickListener(v -> {
+        findViewById(R.id.navPlanner).setOnClickListener(v -> {
             startActivity(new Intent(HomeActivity.this, RecipeHomeActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        findViewById(R.id.profileIcon).setOnClickListener(v -> {
+        findViewById(R.id.navProfile).setOnClickListener(v -> {
             startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
