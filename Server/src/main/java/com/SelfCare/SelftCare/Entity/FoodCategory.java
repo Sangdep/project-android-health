@@ -20,10 +20,9 @@ public class FoodCategory {
 
     String categoryName; // tên danh mục
     String description; // mô tả danh mục
-    String iconUrl; // URL icon danh mục
+
 
     LocalDateTime createdAt;
-
     @OneToMany(mappedBy = "foodCategory", cascade = CascadeType.ALL)
     List<Food> foods;
 

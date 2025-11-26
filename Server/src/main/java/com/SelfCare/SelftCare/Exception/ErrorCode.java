@@ -5,10 +5,14 @@ public enum ErrorCode {
     EMAIL_EXISTED(101,"email existed"),
     USER_NOT_FOUND(104,"user not found "),
     PROFILE_NOT_FOUND(104,"user profile not found "),
-
     EMAIL_NOT_FOUND(102,"email not found"),
     UNAUTHENTICATED(999,"unauthenticated"),
     INVALID_OTP(103,"invalid otp"),
+    FOOD_NOT_FOUND(201,"food not found"),
+    FOOD_CATEGORY_NOT_FOUND(202,"food category not found"),
+    EXERCISE_NOT_FOUND(203,"exercise not found"),
+    EXERCISE_CATEGORY_NOT_FOUND(204,"exercise category not found"),
+    FORBIDDEN(205,"permission denied"),
     ;
     private int code;
     private String message;
