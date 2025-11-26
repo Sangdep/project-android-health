@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.app_selfcare.LoginActivity;
 import com.example.app_selfcare.ManageExerciseActivity;
-import com.example.app_selfcare.ManageFoodActivity;
+import com.example.app_selfcare.ManageRecipeActivity;
 import com.example.app_selfcare.ManageNotificationActivity;
 import com.example.app_selfcare.R;
 
@@ -32,7 +32,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         // Quản lý món ăn → ManageFoodActivity
         findViewById(R.id.cardManageFood).setOnClickListener(v -> {
-            startActivity(new Intent(AdminHomeActivity.this, ManageFoodActivity.class));
+            startActivity(new Intent(AdminHomeActivity.this, ManageRecipeActivity.class));
         });
 
         // Quản lý bài tập → ManageExerciseActivity

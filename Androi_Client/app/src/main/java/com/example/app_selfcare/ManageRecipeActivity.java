@@ -10,13 +10,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ManageFoodActivity extends AppCompatActivity {
+public class ManageRecipeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_manage_food);
+        setContentView(R.layout.activity_manage_recipe);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -26,7 +26,7 @@ public class ManageFoodActivity extends AppCompatActivity {
         // Nút Back → về AdminHomeActivity
         ImageButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> {
-            startActivity(new Intent(ManageFoodActivity.this, AdminHomeActivity.class));
+            startActivity(new Intent(ManageRecipeActivity.this, AdminHomeActivity.class));
             finish();
         });
     }

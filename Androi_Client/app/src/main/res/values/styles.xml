@@ -19,4 +19,14 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_margin">16dp</item>
     </style>
+
+    <!-- Dialog Theme đẹp, full màn hình, nền trong suốt -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
 </resources>

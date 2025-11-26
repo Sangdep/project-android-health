@@ -27,7 +27,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         // Quản lý món ăn → ManageFoodActivity
         findViewById(R.id.cardManageFood).setOnClickListener(v -> {
-            startActivity(new Intent(AdminHomeActivity.this, ManageFoodActivity.class));
+            startActivity(new Intent(AdminHomeActivity.this, ManageRecipeActivity.class));
         });
 
         // Quản lý bài tập → ManageExerciseActivity

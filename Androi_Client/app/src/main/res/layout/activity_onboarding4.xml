@@ -79,7 +79,7 @@
         android:id="@+id/tvSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
+        android:layout_marginStart="110dp"
         android:text="Đã có tài khoản? "
         android:textColor="@android:color/white"
         android:textSize="14sp"
