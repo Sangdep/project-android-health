@@ -15,13 +15,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import com.example.app_selfcare.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -45,7 +44,6 @@ public class ProfileActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile);
 
-        // Xử lý padding cho status bar + navigation bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -59,7 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     @SuppressLint("WrongViewCast")
-    void initViews() {
+    private void initViews() {
         chartView = findViewById(R.id.chartView);
         pointsText = findViewById(R.id.pointsText);
         weightText = findViewById(R.id.weightText);
@@ -69,10 +67,9 @@ public class ProfileActivity extends AppCompatActivity {
         workoutIcon = findViewById(R.id.workoutIcon);
         recipeIcon = findViewById(R.id.recipeIcon);
         profileIcon = findViewById(R.id.profileIcon);
-
         btnSettings = findViewById(R.id.btnSettings);
         btnBack = findViewById(R.id.btnBack);
-        updateInfor = findViewById(R.id.updateInfor); // Đây là LinearLayout bạn đang dùng
+        updateInfor = findViewById(R.id.updateInfor);
     }
 
     private void setupChart() {
@@ -108,43 +105,33 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void setupClickListeners() {
         btnBack.setOnClickListener(v -> finish());
-
         btnSettings.setOnClickListener(v -> {
             startActivity(new Intent(this, AccountSettingsActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        // MỞ DIALOG CẬP NHẬT THÔNG TIN
         updateInfor.setOnClickListener(v -> showUpdateProfileDialog());
 
-        homeIcon.setOnClickListener(v -> {
-            startActivity(new Intent(this, HomeActivity.class));
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            finish();
-        });
-
-        workoutIcon.setOnClickListener(v -> {
-            startActivity(new Intent(this, WorkoutActivity.class));
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            finish();
-        });
-
-        recipeIcon.setOnClickListener(v -> {
-            startActivity(new Intent(this, RecipeHomeActivity.class));
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            finish();
-        });
-
-        profileIcon.setOnClickListener(v -> { /* Đã ở trang Profile */ });
+        homeIcon.setOnClickListener(v -> navigateAndFinish(HomeActivity.class));
+        workoutIcon.setOnClickListener(v -> navigateAndFinish(WorkoutActivity.class));
+        recipeIcon.setOnClickListener(v -> navigateAndFinish(RecipeHomeActivity.class));
+        profileIcon.setOnClickListener(v -> { /* Đang ở Profile */ });
     }
 
-    // ================== DIALOG CẬP NHẬT THÔNG TIN ==================
+    private void navigateAndFinish(Class<?> cls) {
+        startActivity(new Intent(this, cls));
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        finish();
+    }
+
+    // DIALOG CẬP NHẬT THÔNG TIN SỨC KHỎE
     private void showUpdateProfileDialog() {
-        Dialog dialog = new Dialog(this);
+        Dialog dialog = new Dialog(this, R.style.DialogTheme);
         dialog.setContentView(R.layout.dialog_update_profile);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
+        // Find all views
         TextInputEditText etWeight = dialog.findViewById(R.id.etWeight);
         TextInputEditText etHeight = dialog.findViewById(R.id.etHeight);
         RadioGroup radioGroupGoal = dialog.findViewById(R.id.radioGroupGoal);
@@ -155,8 +142,12 @@ public class ProfileActivity extends AppCompatActivity {
         Button btnCancel = dialog.findViewById(R.id.btnCancel);
         Button btnSave = dialog.findViewById(R.id.btnSave);
 
-        // Tự động tính BMI khi nhập
-        TextWatcher watcher = new TextWatcher() {
+        // Đặt giá trị hiện tại
+        etWeight.setText(weightText.getText().toString().replace(" kg", "").trim());
+        etHeight.setText("170");
+
+        // Tính BMI realtime
+        TextWatcher bmiWatcher = new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
@@ -164,12 +155,11 @@ public class ProfileActivity extends AppCompatActivity {
                 calculateAndShowBMI(etWeight.getText().toString(), etHeight.getText().toString(), tvBMIResult);
             }
         };
-        etWeight.addTextChangedListener(watcher);
-        etHeight.addTextChangedListener(watcher);
+        etWeight.addTextChangedListener(bmiWatcher);
+        etHeight.addTextChangedListener(bmiWatcher);
 
-        // Đặt giá trị hiện tại (tùy chọn)
-        etWeight.setText(weightText.getText().toString().replace(" kg", ""));
-        etHeight.setText("170"); // có thể lưu SharedPreferences sau
+        // Tính ngay khi mở
+        calculateAndShowBMI(etWeight.getText().toString(), etHeight.getText().toString(), tvBMIResult);
 
         btnCancel.setOnClickListener(v -> dialog.dismiss());
 
@@ -178,15 +168,13 @@ public class ProfileActivity extends AppCompatActivity {
             String height = etHeight.getText().toString().trim();
 
             if (weight.isEmpty() || height.isEmpty()) {
-                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Vui lòng nhập đầy đủ", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Cập nhật giao diện chính
             weightText.setText(weight + " kg");
-
-            String bmiResult = calculateBMI(weight, height);
-            bmiText.setText(bmiResult.split(" - ")[0]); // chỉ lấy số BMI
+            String bmi = calculateBMI(weight, height);
+            bmiText.setText(bmi.split(" - ")[0]);
 
             String goal = rbGain.isChecked() ? "Tăng cân" :
                     rbMaintain.isChecked() ? "Giữ cân" : "Giảm cân";
@@ -196,7 +184,24 @@ public class ProfileActivity extends AppCompatActivity {
             dialog.dismiss();
         });
 
+        dialog.setCancelable(true);
         dialog.show();
+    }
+
+    private void calculateAndShowBMI(String weightStr, String heightStr, TextView tv) {
+        try {
+            if (!weightStr.isEmpty() && !heightStr.isEmpty()) {
+                float weight = Float.parseFloat(weightStr);
+                float heightM = Float.parseFloat(heightStr) / 100f;
+                float bmi = weight / (heightM * heightM);
+                String status = bmi < 18.5 ? "Gầy" :
+                        bmi < 25 ? "Bình thường" :
+                                bmi < 30 ? "Thừa cân" : "Béo phì";
+                tv.setText(String.format("BMI: %.1f - %s", bmi, status));
+            }
+        } catch (Exception ignored) {
+            tv.setText("BMI: -");
+        }
     }
 
     private String calculateBMI(String weightStr, String heightStr) {
@@ -211,19 +216,5 @@ public class ProfileActivity extends AppCompatActivity {
         } catch (Exception e) {
             return "0.0 - -";
         }
-    }
-
-    private void calculateAndShowBMI(String weight, String height, TextView tv) {
-        try {
-            if (!weight.isEmpty() && !height.isEmpty()) {
-                float w = Float.parseFloat(weight);
-                float h = Float.parseFloat(height) / 100f;
-                float bmi = w / (h * h);
-                String status = bmi < 18.5 ? "Gầy" :
-                        bmi < 25 ? "Bình thường" :
-                                bmi < 30 ? "Thừa cân" : "Béo phì";
-                tv.setText(String.format("BMI: %.1f - %s", bmi, status));
-            }
-        } catch (Exception ignored) { }
     }
 }

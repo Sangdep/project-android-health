@@ -18,10 +18,12 @@
             android:orientation="vertical">
 
             <!-- Header -->
+
+            <!-- Ảnh món ăn -->
             <LinearLayout
-                android:background="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:background="@drawable/header_nav_bg"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="30dp">
@@ -39,16 +41,15 @@
                     android:id="@+id/titleText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="16dp"
+                    android:layout_weight="1"
                     android:text="Thông tin món ăn"
-                    android:textColor="#1B1B1B"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
-            <!-- Ảnh món ăn -->
             <ImageView
                 android:id="@+id/iv_recipe_image"
                 android:layout_width="match_parent"
