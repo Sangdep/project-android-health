@@ -104,7 +104,7 @@ public class InforHeight extends AppCompatActivity {
         }
 
         // Nút Back
-        View btnBack = findViewById(R.id.buttonBack);
+        View btnBack = findViewById(R.id.backButton);
         if (btnBack != null) {
             btnBack.setOnClickListener(v -> {
                 finish();

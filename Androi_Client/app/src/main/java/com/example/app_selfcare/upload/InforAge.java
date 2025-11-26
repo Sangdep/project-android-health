@@ -63,7 +63,7 @@ public class InforAge extends AppCompatActivity {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        findViewById(R.id.buttonBack).setOnClickListener(v -> {
+        findViewById(R.id.backButton).setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });

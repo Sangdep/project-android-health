@@ -19,7 +19,8 @@
 
             <!-- Header -->
             <LinearLayout
-                android:background="@android:color/white"
+                android:id="@+id/headerLayout"
+                android:background="@drawable/header_nav_bg"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:gravity="center_vertical"
@@ -42,7 +43,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
                     android:text="Thông tin món ăn"
-                    android:textColor="#1B1B1B"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
