@@ -31,7 +31,7 @@ public class InforGoal extends AppCompatActivity {
         });
 
         checkboxLoseWeight = findViewById(R.id.checkboxLoseWeight);
-        checkboxPustWeight = findViewById(R.id.checkboxPustWeight);
+        checkboxPustWeight = findViewById(R.id.checkboxGainWeight);
         checkboxIncreaseStrength = findViewById(R.id.checkboxIncreaseStrength);
         checkboxTryApp = findViewById(R.id.checkboxTryApp);
 
@@ -76,7 +76,7 @@ public class InforGoal extends AppCompatActivity {
         });
 
         // Nút Back → Quay lại InforWeight
-        findViewById(R.id.buttonBack).setOnClickListener(v -> {
+        findViewById(R.id.backButton).setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });

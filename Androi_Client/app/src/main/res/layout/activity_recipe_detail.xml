@@ -21,6 +21,8 @@
 
             <!-- Ảnh món ăn -->
             <LinearLayout
+                android:id="@+id/headerLayout"
+                android:background="@drawable/header_nav_bg"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@drawable/header_nav_bg"
@@ -44,7 +46,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:text="Thông tin món ăn"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

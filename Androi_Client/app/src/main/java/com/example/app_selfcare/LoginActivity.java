@@ -98,8 +98,10 @@ public class LoginActivity extends AppCompatActivity {
 
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
 
-                        // Kiểm tra xem user đã có profile chưa
-                        checkUserProfileAndNavigate();
+                        // Chuyển đến trang InforSex
+                        startActivity(new Intent(LoginActivity.this, InforSex.class));
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        finish();
 
                     } else {
                         Toast.makeText(LoginActivity.this, "Sai email hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
@@ -122,53 +124,5 @@ public class LoginActivity extends AppCompatActivity {
                 .edit()
                 .putString("TOKEN", token)
                 .apply();
-    }
-
-    private void checkUserProfileAndNavigate() {
-        ApiService api = ApiClient.getClientWithToken(this).create(ApiService.class);
-        
-        api.getUserProfile().enqueue(new Callback<ApiResponse<UserResponse>>() {
-            @Override
-            public void onResponse(Call<ApiResponse<UserResponse>> call, Response<ApiResponse<UserResponse>> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    ApiResponse<UserResponse> apiRes = response.body();
-                    
-                    if (apiRes.getCode() == 200 && apiRes.getResult() != null) {
-                        UserResponse userResponse = apiRes.getResult();
-                        
-                        // Kiểm tra xem user đã có profile chưa
-                        if (userResponse.getUserProfileResponse() == null || 
-                            userResponse.getUserProfileResponse().getGender() == null) {
-                            // Chưa có profile → chuyển đến trang upload
-                            startActivity(new Intent(LoginActivity.this, InforSex.class));
-                        } else {
-                            // Đã có profile → chuyển đến HomeActivity
-                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                        }
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                        finish();
-                    } else {
-                        // Nếu lỗi, mặc định chuyển đến trang upload
-                        startActivity(new Intent(LoginActivity.this, InforSex.class));
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                        finish();
-                    }
-                } else {
-                    // Nếu lỗi, mặc định chuyển đến trang upload
-                    startActivity(new Intent(LoginActivity.this, InforSex.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ApiResponse<UserResponse>> call, Throwable t) {
-                // Nếu lỗi kết nối, mặc định chuyển đến trang upload
-                android.util.Log.e("LoginActivity", "Error checking profile: " + t.getMessage());
-                startActivity(new Intent(LoginActivity.this, InforSex.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-            }
-        });
     }
 }
