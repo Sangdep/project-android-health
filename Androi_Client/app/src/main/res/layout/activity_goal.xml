@@ -8,64 +8,40 @@
     android:background="#F3F4F6"
     tools:context=".upload.InforGoal">
 
-    <!-- Top App Bar -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topAppBar"
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:background="@drawable/header_nav_bg"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:paddingTop="8dp"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="30dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageButton
-            android:id="@+id/buttonBack"
-            android:layout_width="75dp"
-            android:layout_height="61dp"
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_button_style"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_backk"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_marginStart="16dp"
-            android:background="@drawable/rounded_circle_white_background"
-            android:contentDescription="Back"
-            android:padding="8dp"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!-- Điều chỉnh bias cho gần hơn -->
-
-        <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Mục tiêu"
-            android:textColor="#000000"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textViewPageIndicator"
-            app:layout_constraintHorizontal_bias="0.048"
-            app:layout_constraintStart_toEndOf="@id/buttonBack"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewPageIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/page_indicator_4_of_6"
-            android:textColor="@color/orange_text_icon"
-            android:background="@drawable/rounded_corner_background_light_orange"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <!-- Question Text -->
     <TextView
@@ -78,7 +54,7 @@
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -141,8 +117,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Goal 2: Tăng cân -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/goalPustWeightLayout"
+            android:id="@+id/goalGainWeightLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/goal_default_bg"
@@ -153,7 +131,7 @@
             android:layout_marginBottom="12dp">
 
             <ImageView
-                android:id="@+id/iconPustWeight"
+                android:id="@+id/iconGainWeight"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_lose_weight_placeholder"
@@ -161,10 +139,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:contentDescription="Icon giảm cân"/>
+                android:contentDescription="Icon tăng cân" />
 
             <TextView
-                android:id="@+id/textPustWeight"
+                android:id="@+id/textGainWeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Tôi muốn tăng cân"
@@ -172,22 +150,20 @@
                 android:textSize="16sp"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
-                app:layout_constraintStart_toEndOf="@id/iconPustWeight"
-                app:layout_constraintEnd_toStartOf="@id/checkboxPustWeight"
+                app:layout_constraintStart_toEndOf="@id/iconGainWeight"
+                app:layout_constraintEnd_toStartOf="@id/checkboxGainWeight"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <CheckBox
-                android:id="@+id/checkboxPustWeight"
+                android:id="@+id/checkboxGainWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:buttonTint="#A1A1AA"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!-- Goal 2: Thử với trợ lý ảo (Selected) -->
 
         <!-- Goal 3: Tăng sức bền -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -237,6 +213,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <!-- Goal 4: Thử ứng dụng -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/goalTryAppLayout"
             android:layout_width="match_parent"
@@ -245,7 +222,8 @@
             android:paddingStart="16dp"
             android:paddingTop="12dp"
             android:paddingEnd="12dp"
-            android:paddingBottom="12dp">
+            android:paddingBottom="12dp"
+            android:layout_marginBottom="12dp">
 
             <ImageView
                 android:id="@+id/iconTryApp"
@@ -288,10 +266,10 @@
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:text="Tiếp tục"
         android:textColor="#FFFFFF"
-        android:background="#000000"
+        android:background="@drawable/rounded_orange_button_bg"
         app:icon="@drawable/ic_arrow_forward"
         app:iconTint="#FFFFFF"
         app:iconGravity="textEnd"
@@ -300,11 +278,12 @@
         android:textAllCaps="false"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
         app:backgroundTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/goalsContainer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

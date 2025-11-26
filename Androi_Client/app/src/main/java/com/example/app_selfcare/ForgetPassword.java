@@ -31,7 +31,7 @@ public class ForgetPassword extends AppCompatActivity {
         });
 
         // Nút Back → Quay lại Login
-        findViewById(R.id.btnBack).setOnClickListener(v -> {
+        findViewById(R.id.backButton).setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
