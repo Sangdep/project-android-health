@@ -93,7 +93,7 @@ public class InforWeight extends AppCompatActivity {
         });
 
         // Nút Back → Quay lại InforHeight
-        findViewById(R.id.buttonBack).setOnClickListener(v -> {
+        findViewById(R.id.backButton).setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });

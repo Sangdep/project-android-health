@@ -6,8 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.ImageView;          // Đã đổi
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -30,7 +29,7 @@ public class InforSex extends AppCompatActivity {
     private TextView textMale, textFemale;
     private ImageView iconMale, iconFemale;
     private Button buttonContinue;
-    private ImageButton buttonBack;
+    private ImageView buttonBack;        // ĐÃ SỬA: từ ImageButton → ImageView
 
     private String selectedGender = "FEMALE"; // Mặc định là Nữ
 
@@ -40,7 +39,6 @@ public class InforSex extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_infor_sex);
 
-        // Xử lý padding cho edge-to-edge
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -48,11 +46,7 @@ public class InforSex extends AppCompatActivity {
         });
 
         initViews();
-
-        // QUAN TRỌNG: Cài đặt trạng thái ban đầu khớp với XML
-        // Trong XML bạn để Nữ checked=true, nên ở đây ta set logic theo Nữ
         handleGenderSelection(false);
-
         setupListeners();
     }
 
@@ -67,24 +61,16 @@ public class InforSex extends AppCompatActivity {
         iconMale = findViewById(R.id.iconMale);
         iconFemale = findViewById(R.id.iconFemale);
         buttonContinue = findViewById(R.id.buttonContinue);
-        buttonBack = findViewById(R.id.buttonBack);
+        buttonBack = findViewById(R.id.backButton);  // Giờ đúng kiểu rồi
     }
 
     private void setupListeners() {
-        // --- SỬA ĐỔI QUAN TRỌNG TẠI ĐÂY ---
-
-        // Thay vì dùng radioGroup.setOnCheckedChangeListener (bị lỗi do lồng layout),
-        // chúng ta bắt sự kiện click trực tiếp vào Card và RadioButton để xử lý thủ công.
-
-        // 1. Sự kiện khi chọn NAM
         cardMale.setOnClickListener(v -> handleGenderSelection(true));
         radioMale.setOnClickListener(v -> handleGenderSelection(true));
 
-        // 2. Sự kiện khi chọn NỮ
         cardFemale.setOnClickListener(v -> handleGenderSelection(false));
         radioFemale.setOnClickListener(v -> handleGenderSelection(false));
 
-        // 3. Nút Tiếp tục
         buttonContinue.setOnClickListener(v -> {
             Intent intent = new Intent(InforSex.this, InforAge.class);
             intent.putExtra("user_gender", selectedGender);
@@ -92,45 +78,28 @@ public class InforSex extends AppCompatActivity {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        // 4. Nút Quay lại
+        // Vẫn hoạt động bình thường dù là ImageView
         buttonBack.setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
     }
 
-    /**
-     * Hàm xử lý logic chọn giới tính tập trung.
-     * Đảm bảo khi chọn cái này thì TẮT cái kia thủ công.
-     * @param isMale: true nếu chọn Nam, false nếu chọn Nữ
-     */
     private void handleGenderSelection(boolean isMale) {
         if (isMale) {
-            // --- CHỌN NAM ---
             selectedGender = "MALE";
-
-            // Logic checkbox: Bật Nam, Tắt Nữ (Phải làm thủ công vì RadioGroup không thấy được view con)
             radioMale.setChecked(true);
             radioFemale.setChecked(false);
-
-            // Cập nhật giao diện
             updateGenderUI(true);
-
         } else {
-            // --- CHỌN NỮ ---
             selectedGender = "FEMALE";
-
-            // Logic checkbox: Bật Nữ, Tắt Nam
             radioFemale.setChecked(true);
             radioMale.setChecked(false);
-
-            // Cập nhật giao diện
             updateGenderUI(false);
         }
     }
 
     private void updateGenderUI(boolean isMaleSelected) {
-        // Định nghĩa màu
         int orangeColor = Color.parseColor("#F97316");
         int grayTextColor = Color.parseColor("#1F2937");
         int grayIconColor = Color.parseColor("#4B5563");
@@ -139,12 +108,10 @@ public class InforSex extends AppCompatActivity {
         ColorStateList orangeColorState = ColorStateList.valueOf(orangeColor);
         ColorStateList grayRadioColorState = ColorStateList.valueOf(grayRadioColor);
 
-        // Convert 2dp sang pixel
         int strokeWidthPx = (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
 
         if (isMaleSelected) {
-            // Hiển thị trạng thái NAM được chọn
             cardMale.setStrokeColor(orangeColor);
             cardMale.setStrokeWidth(strokeWidthPx);
             textMale.setTextColor(orangeColor);
@@ -157,7 +124,6 @@ public class InforSex extends AppCompatActivity {
             iconFemale.setColorFilter(grayIconColor);
             radioFemale.setButtonTintList(grayRadioColorState);
         } else {
-            // Hiển thị trạng thái NỮ được chọn
             cardFemale.setStrokeColor(orangeColor);
             cardFemale.setStrokeWidth(strokeWidthPx);
             textFemale.setTextColor(orangeColor);

@@ -8,65 +8,40 @@
     android:background="@color/orange_text_icon"
     tools:context=".upload.InforHeight">
 
-    <!-- Top App Bar -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topAppBar"
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:background="@drawable/header_nav_bg"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:paddingTop="8dp"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="30dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageButton
-            android:id="@+id/buttonBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_arrow_back"
-            android:background="@drawable/rounded_circle_white_background"
-
-            android:contentDescription="@string/back_button_description"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        <!-- Tạo drawable/rounded_circle_white_background.xml -->
-        <!-- Tạo color/orange_text_icon (màu cam cho icon) -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_button_style"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_backk"
+            app:tint="@android:color/white" />
 
         <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Chiều Cao"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="Chiều cao"
             android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/textViewPageIndicator"
-            app:layout_constraintHorizontal_bias="0.075"
-            app:layout_constraintStart_toEndOf="@id/buttonBack"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textViewPageIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/page_indicator_3_of_6"
-            android:textColor="@color/orange_text_icon"
-            android:background="@drawable/rounded_corner_background_light_orange"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-        <!-- Tạo drawable/rounded_corner_background_light_orange.xml -->
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <!-- Question Text -->
     <TextView
@@ -81,7 +56,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -150,7 +125,7 @@
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="55dp"
         android:text="@string/continue_button_text"
         app:backgroundTint="@null"
         android:textColor="@color/orange_text_icon"
@@ -162,10 +137,11 @@
         android:textStyle="bold"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="32dp"
+        app:layout_constraintTop_toBottomOf="@id/heightRulerScroll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-    <!-- Tạo drawable/rounded_corner_button_white.xml -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
