@@ -1,5 +1,7 @@
 package com.SelfCare.SelftCare.Entity;
 
+import com.SelfCare.SelftCare.Enum.DifficultyLevel;
+import com.SelfCare.SelftCare.Enum.MealType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -22,29 +24,34 @@ public class Food {
     String foodName; // tên thực phẩm
     Double caloriesPer100g; // calo trên 100g
     Double proteinPer100g = 0.0; // protein trên 100g
-    Double carbPer100g = 0.0; // carbohydrate trên 100g
     Double fatPer100g = 0.0; // chất béo trên 100g
     Double fiberPer100g = 0.0; // chất xơ trên 100g
     Double sugarPer100g = 0.0; // đường trên 100g
-    Double sodiumPer100g = 0.0; // natri trên 100g
+
+
+
+
+
+    // ---- Recipe Info ----
+    String instructions; // hướng dẫn nấu ăn
+    Integer prepTime; // phút chuẩn bị
+    Integer cookTime; // phút nấu
+    Integer servings = 1; // khẩu phần
+
+    @Enumerated(EnumType.STRING)
+    DifficultyLevel difficultyLevel;
 
     String imageUrl; // URL ảnh thực phẩm
-    String barcode; // mã vạch
-    String brand; // thương hiệu
-    String servingSize; // khẩu phần tiêu chuẩn
-    Boolean isVerified = false; // đã xác minh?
 
+    @Enumerated(EnumType.STRING)
+    MealType mealType = MealType.ALL; // mặc định ALL
     LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     FoodCategory foodCategory;
 
-    @OneToMany(mappedBy = "food", cascade = CascadeType.ALL)
-    List<RecipeIngredient> recipeIngredients;
 
-    @OneToMany(mappedBy = "food", cascade = CascadeType.ALL)
-    List<FoodIntakeLog> foodIntakeLogs;
 
     @PrePersist
     protected void onCreate() {
