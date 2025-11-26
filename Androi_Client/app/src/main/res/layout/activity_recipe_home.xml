@@ -77,13 +77,13 @@
                     app:tint="#8FB1A2" />
 
                 <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:background="@null"
                     android:hint="Search recipe"
                     android:textColorHint="#CCCCCC"
-                    android:background="@null"
                     android:textSize="14sp" />
 
                 <ImageView

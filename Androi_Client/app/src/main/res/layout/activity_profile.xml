@@ -51,8 +51,8 @@
 
                 <ImageView
                     android:id="@+id/btnSettings"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:src="@drawable/ic_setting"
                     app:tint="#CCCCCC"
                     android:clickable="true"
