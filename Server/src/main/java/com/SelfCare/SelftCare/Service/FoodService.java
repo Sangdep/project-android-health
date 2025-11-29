@@ -18,6 +18,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -108,6 +110,9 @@ public class FoodService {
                 .build();
     }
 
+
+
+
     // ==== Tách riêng hàm build CategoryResponse ====
     private FoodCategoryResponse buildCategoryResponse(FoodCategory category) {
         if (category == null) return null;
@@ -115,6 +120,23 @@ public class FoodService {
                 .categoryId(category.getCategoryId())
                 .categoryName(category.getCategoryName())
                 .build();
+    }
+
+
+    // --- HÀM 1: LẤY TẤT CẢ ---
+    public List<FoodCreateResponse> getAllFoods() {
+        List<Food> foods = foodRepository.findAll();
+        return foods.stream()
+                .map(foodMapper::toFoodResponse)
+                .collect(Collectors.toList());
+    }
+
+    // --- HÀM 2: LẤY THEO LOẠI BỮA ĂN ---
+    public List<FoodCreateResponse> getFoodsByMealType(MealType mealType) {
+        List<Food> foods = foodRepository.findByMealType(mealType);
+        return foods.stream()
+                .map(foodMapper::toFoodResponse)
+                .collect(Collectors.toList());
     }
 
 
