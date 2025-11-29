@@ -1,6 +1,7 @@
 // ChangePasswordActivity.java
 package com.example.app_selfcare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -18,7 +19,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private EditText oldPasswordEditText, newPasswordEditText, confirmPasswordEditText;
     private ImageView oldPasswordToggle, newPasswordToggle, confirmPasswordToggle;
     private Button changePasswordButton;
-    private ImageView homeIcon, settingsIcon, profileIcon, menuIcon;
 
     private boolean isOldPasswordVisible = false;
     private boolean isNewPasswordVisible = false;
@@ -43,11 +43,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
         newPasswordToggle = findViewById(R.id.newPasswordToggle);
         confirmPasswordToggle = findViewById(R.id.confirmPasswordToggle);
         changePasswordButton = findViewById(R.id.changePasswordButton);
-
-        homeIcon = findViewById(R.id.homeIcon);
-        settingsIcon = findViewById(R.id.settingsIcon);
-        profileIcon = findViewById(R.id.profileIcon);
-        menuIcon = findViewById(R.id.menuIcon);
 
         titleText.setText("Đổi mật khẩu");
     }
@@ -95,6 +90,42 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 // Add validation logic here
             }
         });
+
+        // Bottom Navigation
+        View navHome = findViewById(R.id.navHome);
+        View navWorkout = findViewById(R.id.navWorkout);
+        View navPlanner = findViewById(R.id.navPlanner);
+        View navProfile = findViewById(R.id.navProfile);
+
+        if (navHome != null) {
+            navHome.setOnClickListener(v -> {
+                Intent intent = new Intent(ChangePasswordActivity.this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            });
+        }
+
+        if (navWorkout != null) {
+            navWorkout.setOnClickListener(v -> {
+                startActivity(new Intent(ChangePasswordActivity.this, WorkoutActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
+
+        if (navPlanner != null) {
+            navPlanner.setOnClickListener(v -> {
+                startActivity(new Intent(ChangePasswordActivity.this, RecipeHomeActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
+
+        if (navProfile != null) {
+            navProfile.setOnClickListener(v -> {
+                startActivity(new Intent(ChangePasswordActivity.this, ProfileActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            });
+        }
     }
 
     private void togglePasswordVisibility(EditText editText, ImageView toggleIcon, boolean isVisible) {

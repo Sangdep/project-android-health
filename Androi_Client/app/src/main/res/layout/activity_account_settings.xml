@@ -232,47 +232,115 @@
         app:backgroundTint="@null" />
 
 
-    <!-- Bottom Navigation -->
     <LinearLayout
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="76dp"
         android:background="@drawable/bottom_nav_bg"
-        android:elevation="4dp"
+        android:elevation="10dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp">
 
-        <ImageView
-            android:id="@+id/homeIcon"
+        <LinearLayout
+            android:id="@+id/navHome"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_home"
-            android:padding="8dp" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/settingsIcon"
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Trang chủ"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navWorkout"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_workout"
-            android:padding="8dp" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/profileIcon"
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_workout"
+                app:tint="#BDBDBD"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Tập luyện"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPlanner"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_recipe"
-            android:padding="8dp" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/menuIcon"
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_statistic"
+                app:tint="#BDBDBD" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Món Ăn"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_proflie"
-            android:padding="8dp" />
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_proflie"
+                android:background="@drawable/bottom_nav_selected_bg"
+                android:padding="6dp"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Cá nhân"
+                android:textColor="#FF9F63"
+                android:textSize="11sp" />
+        </LinearLayout>
     </LinearLayout>
+
 
 </LinearLayout>

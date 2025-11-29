@@ -3,6 +3,7 @@ package com.example.app_selfcare;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import com.example.app_selfcare.Fragment.RecipePeriodFragment;
 
 public class RecipeHomeActivity extends AppCompatActivity {
 
-    private ImageView homeIcon, workoutIcon, recipeIcon, profileIcon;
+    private View navHome, navWorkout, navPlanner, navProfile;
     private TextView tvAll, tvBreakfast, tvLunch, tvDinner;
     private Button btnSavedRecipes;
 
@@ -36,10 +37,10 @@ public class RecipeHomeActivity extends AppCompatActivity {
 
     private void initViews() {
         // Bottom Navigation
-        homeIcon = findViewById(R.id.homeIcon);
-        workoutIcon = findViewById(R.id.workoutIcon);
-        recipeIcon = findViewById(R.id.recipeIcon);
-        profileIcon = findViewById(R.id.profileIcon);
+        navHome = findViewById(R.id.navHome);
+        navWorkout = findViewById(R.id.navWorkout);
+        navPlanner = findViewById(R.id.navPlanner);
+        navProfile = findViewById(R.id.navProfile);
 
         // Meal Type Tabs
         tvAll = findViewById(R.id.tvAll);
@@ -86,23 +87,23 @@ public class RecipeHomeActivity extends AppCompatActivity {
 //        });
 
         // Bottom Navigation
-        homeIcon.setOnClickListener(v -> {
+        navHome.setOnClickListener(v -> {
             Intent intent = new Intent(RecipeHomeActivity.this, HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
 
-        workoutIcon.setOnClickListener(v -> {
+        navWorkout.setOnClickListener(v -> {
             startActivity(new Intent(RecipeHomeActivity.this, WorkoutActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
-        recipeIcon.setOnClickListener(v -> {
+        navPlanner.setOnClickListener(v -> {
             // Already on this screen, do nothing or refresh
         });
 
-        profileIcon.setOnClickListener(v -> {
+        navProfile.setOnClickListener(v -> {
             startActivity(new Intent(RecipeHomeActivity.this, ProfileActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });

@@ -341,7 +341,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bottom_nav_selected_bg"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -349,14 +348,14 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_home"
-                app:tint="#FF9F63" />
+                app:tint="#BDBDBD" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Trang chủ"
-                android:textColor="#FF9F63"
+                android:textColor="#BDBDBD"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -373,14 +372,14 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_workout"
-                app:tint="#BDBDBD" />
+                android:scaleType="centerInside" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Tập luyện"
-                android:textColor="#BDBDBD"
+                android:textColor="#FF9F63"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -403,7 +402,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Kế hoạch"
+                android:text="Món Ăn"
                 android:textColor="#BDBDBD"
                 android:textSize="11sp" />
         </LinearLayout>

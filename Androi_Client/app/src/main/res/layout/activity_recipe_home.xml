@@ -58,7 +58,8 @@
                     android:layout_height="50dp"
                     android:src="@drawable/ic_proflie"
                     android:background="@drawable/circle_background"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    app:tint="#BDBDBD" />
 
             </LinearLayout>
 
@@ -173,69 +174,117 @@
         android:layout_above="@id/bottomNav"
         android:background="#F5F5F5" />
 
-    <!-- ===================== BOTTOM NAVIGATION ===================== -->
+    <!-- Bottom navigation -->
+    <!-- Thanh điều hướng dưới -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="76dp"
         android:background="@drawable/bottom_nav_bg"
-        android:elevation="8dp"
+        android:elevation="10dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:layout_alignParentBottom="true">
 
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/navHome"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/homeIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/ic_home"
-                android:padding="12dp" />
-        </FrameLayout>
+                app:tint="#BDBDBD" />
 
-        <FrameLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Trang chủ"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navWorkout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/workoutIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/ic_workout"
-                android:padding="12dp" />
-        </FrameLayout>
+                app:tint="#BDBDBD"
+                android:scaleType="centerInside" />
 
-        <FrameLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Tập luyện"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPlanner"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <ImageView
-                android:id="@+id/recipeIcon"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_recipe"
-                android:padding="12dp" />
-        </FrameLayout>
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <FrameLayout
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_statistic"
+                android:background="@drawable/bottom_nav_selected_bg"
+                android:padding="6dp"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Món Ăn"
+                android:textColor="#FF9F63"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <ImageView
-                android:id="@+id/profileIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/ic_proflie"
-                android:padding="12dp" />
-        </FrameLayout>
+                app:tint="#BDBDBD" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Cá nhân"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

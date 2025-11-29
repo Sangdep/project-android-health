@@ -45,7 +45,7 @@ public class WorkoutActivity extends AppCompatActivity {
         });
 
         navPlanner.setOnClickListener(v -> {
-            startActivity(new Intent(WorkoutActivity.this, WorkoutDetailActivity.class)); // hoặc tên class của bạn
+            startActivity(new Intent(WorkoutActivity.this, RecipeHomeActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         });
 
