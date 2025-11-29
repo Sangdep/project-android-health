@@ -29,7 +29,6 @@ public class AdminHomeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         // Quản lý món ăn → ManageFoodActivity
         findViewById(R.id.cardManageFood).setOnClickListener(v -> {
             startActivity(new Intent(AdminHomeActivity.this, ManageRecipeActivity.class));
@@ -54,5 +53,9 @@ public class AdminHomeActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+
+
+
     }
 }

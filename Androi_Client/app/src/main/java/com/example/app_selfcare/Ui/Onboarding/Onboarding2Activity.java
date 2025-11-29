@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.app_selfcare.R;
 
 public class Onboarding2Activity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

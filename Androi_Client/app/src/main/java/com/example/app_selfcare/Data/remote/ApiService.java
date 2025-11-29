@@ -1,6 +1,10 @@
 package com.example.app_selfcare.Data.remote;
 
+import com.example.app_selfcare.Data.Model.Request.ForgotPasswordRequest;
+import com.example.app_selfcare.Data.Model.Request.ResetPasswordRequest;
 import com.example.app_selfcare.Data.Model.Request.UserLoginRequest;
+import com.example.app_selfcare.Data.Model.Request.UserRegisterRequest;
+import com.example.app_selfcare.Data.Model.Request.VerifyOtpRequest;
 import com.example.app_selfcare.Data.Model.Response.ApiResponse;
 import com.example.app_selfcare.Data.Model.Response.UserLoginResponse;
 import com.example.app_selfcare.Data.Model.Response.UserResponse;
@@ -23,6 +27,9 @@ public interface ApiService {
     @POST("app/auth/login")
     Call<ApiResponse<UserLoginResponse>> login(@Body UserLoginRequest request);
 
+    @POST("app/Users/Register")
+    Call<ApiResponse<UserResponse>> register(@Body UserRegisterRequest request);
+
     @retrofit2.http.GET("app/userProfile/get")
     Call<ApiResponse<UserResponse>> getUserProfile();
 
@@ -36,5 +43,14 @@ public interface ApiService {
             @Part("healthGoal") RequestBody healthGoal,
             @Part MultipartBody.Part avatar
     );
+
+    @POST("app/auth/forgot-password")
+    Call<ApiResponse<String>> forgotPassword(@Body ForgotPasswordRequest request);
+
+    @POST("app/auth/verify-otp")
+    Call<ApiResponse<String>> verifyOtp(@Body VerifyOtpRequest request);
+
+    @POST("app/auth/reset-password")
+    Call<ApiResponse<String>> resetPassword(@Body ResetPasswordRequest request);
 
 }
