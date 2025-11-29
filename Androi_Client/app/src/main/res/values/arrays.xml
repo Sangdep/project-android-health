@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="meal_types_array">
+        <item>Bữa sáng (Breakfast)</item>
+        <item>Bữa trưa (Lunch)</item>
+        <item>Bữa tối (Dinner)</item>
+        <item>Bữa phụ (Snack)</item>
+        <item>Khác</item>
+    </string-array>
+
+    <string-array name="difficulty_levels_array">
+        <item>Dễ (Easy)</item>
+        <item>Trung bình (Medium)</item>
+        <item>Khó (Hard)</item>
+    </string-array>
+</resources>

@@ -72,7 +72,7 @@ public class InforSex extends AppCompatActivity {
         radioFemale.setOnClickListener(v -> handleGenderSelection(false));
 
         buttonContinue.setOnClickListener(v -> {
-            Intent intent = new Intent(InforSex.this, InforAge.class);
+            Intent intent = new Intent(InforSex.this, InforBirthdate.class);
             intent.putExtra("user_gender", selectedGender);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
