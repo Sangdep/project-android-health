@@ -30,8 +30,13 @@ spring:
             enable: true
   data:
     redis:
-      host: localhost
+      host: singapore-keyvalue.render.com
       port: 6379
+      username: red-d4lefsuuk2gs738c1a90
+      password: D1tU4cPMtKqaatXv0PJ4XMSk3qsLexXw
+      ssl:
+        enabled: true  # Dòng này cực kỳ quan trọng với External Render
+      timeout: 10s     # Tăng thời gian chờ lên
 jwt:
   signerKey: "HAGUOt0Qm87yn2SFEfjlVRM3chXO/Wpy1YnsdZQz2O7+S4dPFiTQvpxHVVLE6r+c"
 
