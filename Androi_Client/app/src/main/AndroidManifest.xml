@@ -15,10 +15,19 @@
         android:theme="@style/Theme.App_selfCare"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AddRecipeActivity"
+            android:name=".AddCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".AddExerciseActivity"
+            android:name=".Ui.Admin.AddRecipeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Ui.Admin.AddExerciseActivity"
             android:exported="false" />
         <activity
             android:name=".HelpActivity"
@@ -35,30 +44,29 @@
         <activity
             android:name=".WorkoutActivity"
             android:exported="false" />
-
         <activity
-            android:name=".ManageRecipeActivity"
+            android:name=".Ui.Admin.ManageRecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageExerciseActivity"
+            android:name=".Ui.Admin.ManageExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".ManageNotificationActivity"
+            android:name=".Ui.Admin.ManageNotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminHomeActivity"
+            android:name=".Ui.Admin.AdminHomeActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Onboarding2Activity"
+            android:name=".Ui.Onboarding.Onboarding2Activity"
             android:exported="false" />
         <activity
-            android:name=".Onboarding3Activity"
+            android:name=".Ui.Onboarding.Onboarding3Activity"
             android:exported="false" />
         <activity
-            android:name=".Onboarding4Activity"
+            android:name=".Ui.Onboarding.Onboarding4Activity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -76,7 +84,7 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".upload.InforAge"
+            android:name=".upload.InforBirthdate"
             android:exported="false" />
         <activity
             android:name=".upload.InforGoal"
@@ -103,7 +111,7 @@
             android:name=".SavedRecipesActivity"
             android:exported="false" />
         <activity
-            android:name=".Onboarding1Activity"
+            android:name=".Ui.Onboarding.Onboarding1Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -111,7 +119,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AccountSettingsActivity"
             android:exported="false" />

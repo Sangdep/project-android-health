@@ -12,9 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.app_selfcare.LoginActivity;
-import com.example.app_selfcare.ManageExerciseActivity;
-import com.example.app_selfcare.ManageRecipeActivity;
-import com.example.app_selfcare.ManageNotificationActivity;
 import com.example.app_selfcare.R;
 
 public class AdminHomeActivity extends AppCompatActivity {

@@ -15,11 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.app_selfcare.Data.Model.Request.UserLoginRequest;
 import com.example.app_selfcare.Data.Model.Response.ApiResponse;
 import com.example.app_selfcare.Data.Model.Response.UserLoginResponse;
-import com.example.app_selfcare.Data.Model.Response.UserResponse;
 import com.example.app_selfcare.Data.remote.ApiClient;
 import com.example.app_selfcare.Data.remote.ApiService;
 
-import com.example.app_selfcare.upload.InforAge;
 import com.example.app_selfcare.upload.InforSex;
 
 import retrofit2.Call;
