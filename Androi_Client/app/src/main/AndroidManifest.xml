@@ -15,14 +15,17 @@
         android:theme="@style/Theme.App_selfCare"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".Ui.Admin.AddRecipeActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Ui.Admin.AddExerciseActivity"
             android:exported="false" />
@@ -100,8 +103,7 @@
             android:exported="false" />
         <activity
             android:name=".RecipeHomeActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".RecipeDetailActivity"
             android:exported="false" />
