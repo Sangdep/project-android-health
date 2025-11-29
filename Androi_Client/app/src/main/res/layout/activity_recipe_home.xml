@@ -5,11 +5,15 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <!-- ===================== PHẦN HEADER + TABS (GIỮ NGUYÊN) ===================== -->
     <ScrollView
+        android:id="@+id/headerScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottomNav"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,7 +21,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Header -->
+            <!-- Header: Xin chào + Avatar -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,8 +56,9 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/ic_proflie"
-                    android:padding="10dp" />
+                    android:src="@drawable/ic_proflie"
+                    android:background="@drawable/circle_background"
+                    android:padding="8dp" />
 
             </LinearLayout>
 
@@ -63,12 +68,10 @@
                 android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:background="@drawable/bg_search_field"
                 android:paddingStart="16dp"
                 android:paddingEnd="8dp"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_search_field">
+                android:layout_marginBottom="24dp">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -81,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:hint="Search recipe"
+                    android:hint="Tìm kiếm công thức..."
                     android:textColorHint="#CCCCCC"
                     android:background="@null"
                     android:textSize="14sp" />
@@ -89,22 +92,23 @@
                 <ImageView
                     android:layout_width="44dp"
                     android:layout_height="44dp"
-                    android:background="@drawable/bg_filter_button"
-                    android:padding="10dp"
                     android:src="@drawable/ic_filter"
+                    android:background="@drawable/bg_filter_button"
                     android:scaleType="centerInside"
                     app:tint="@android:color/white" />
 
             </LinearLayout>
 
+            <!-- 4 Tabs: All / Sáng / Trưa / Tối -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="10dp"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="10dp">
 
                 <TextView
+                    android:id="@+id/tvAll"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -112,343 +116,64 @@
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:background="@drawable/bg_chip_selected"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
+                    android:padding="12dp"
                     android:textSize="14sp"
                     android:textAlignment="center"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
+                    android:id="@+id/tvBreakfast"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Sáng"
                     android:textColor="#0F955A"
                     android:background="@drawable/bg_chip_unselected"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
+                    android:padding="12dp"
                     android:textSize="14sp"
                     android:textAlignment="center"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
+                    android:id="@+id/tvLunch"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Trưa"
                     android:textColor="#0F955A"
                     android:background="@drawable/bg_chip_unselected"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
+                    android:padding="12dp"
                     android:textSize="14sp"
                     android:textAlignment="center"
                     android:layout_marginEnd="8dp" />
 
                 <TextView
+                    android:id="@+id/tvDinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Chiều"
-                    android:textAlignment="center"
+                    android:text="Tối"
                     android:textColor="#0F955A"
                     android:background="@drawable/bg_chip_unselected"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Món cho bạn hôm nay"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Recipe Cards Grid -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="24dp">
-
-                <!-- Card 1 -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/recipeCard1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="12dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/ic_salad"
-                                android:scaleType="centerCrop" />
-
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Classic Greek Salad"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center_vertical"
-                                android:layout_marginTop="8dp">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Time"
-                                    android:textColor="#999999"
-                                    android:textSize="11sp" />
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="15 Mins"
-                                android:textColor="@android:color/black"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- Card 2 -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/recipeCard2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/ic_cupcake"
-                                android:scaleType="centerCrop" />
-
-                        </RelativeLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="12dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Crunchy Nut Coleslaw"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center_vertical"
-                                android:layout_marginTop="8dp">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Time"
-                                    android:textColor="#999999"
-                                    android:textSize="11sp" />
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="10 Mins"
-                                android:textColor="@android:color/black"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:textAlignment="center" />
 
             </LinearLayout>
-
-            <!-- New Recipes Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Món mới"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
-
-            <!-- New Recipe Card -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/newRecipeCard1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="2dp"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/menu_item_background"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/ic_steak_tomato"
-                        android:scaleType="centerCrop" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="12dp"
-                        android:layout_gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Steak with tomato..."
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mô tả ngắn gọn"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Lượng calo"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Time"
-                            android:textColor="@android:color/black"
-                            android:textSize="11sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20 mins"
-                            android:textColor="#666666"
-                            android:textSize="11sp"
-                            android:layout_marginTop="4dp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Button to view saved recipes -->
-            <Button
-                android:id="@+id/btn_saved_recipes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Món đã lưu"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bg_primary_button"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:layout_marginTop="16dp" />
 
         </LinearLayout>
-
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- ===================== NƠI HIỂN THỊ DANH SÁCH MÓN (Fragment) ===================== -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerScrollView"
+        android:layout_above="@id/bottomNav"
+        android:background="#F5F5F5" />
+
+    <!-- ===================== BOTTOM NAVIGATION ===================== -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
@@ -457,73 +182,58 @@
         android:background="@drawable/bottom_nav_bg"
         android:elevation="8dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp">
+        android:orientation="horizontal">
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
             <ImageView
                 android:id="@+id/homeIcon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:padding="12dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_home"
+                android:padding="12dp" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
             <ImageView
                 android:id="@+id/workoutIcon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:padding="12dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_workout" />
+                android:src="@drawable/ic_workout"
+                android:padding="12dp" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
             <ImageView
                 android:id="@+id/recipeIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_gravity="center"
-                android:padding="12dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_recipe" />
+                android:src="@drawable/ic_recipe"
+                android:padding="12dp" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
             <ImageView
                 android:id="@+id/profileIcon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:padding="12dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_proflie" />
+                android:src="@drawable/ic_proflie"
+                android:padding="12dp" />
         </FrameLayout>
 
     </LinearLayout>

@@ -1,7 +1,8 @@
-package com.example.app_selfcare;
+package com.example.app_selfcare.Ui.Admin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,25 +10,26 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Onboarding1Activity extends AppCompatActivity {
+import com.example.app_selfcare.R;
+
+public class ManageRecipeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_onboarding1);
+        setContentView(R.layout.activity_manage_recipe);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // Nút Tiếp tục → Onboarding 2
-        findViewById(R.id.btnContinue).setOnClickListener(v -> {
-            Intent intent = new Intent(Onboarding1Activity.this, Onboarding2Activity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+        // Nút Back → về AdminHomeActivity
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> {
+            startActivity(new Intent(ManageRecipeActivity.this, AdminHomeActivity.class));
+            finish();
         });
-
     }
-
 }
