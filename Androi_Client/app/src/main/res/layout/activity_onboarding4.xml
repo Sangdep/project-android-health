@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_trang4"
-    tools:context=".Onboarding4Activity">
+    tools:context=".Ui.Onboarding.Onboarding4Activity">
 
     <!-- Logo -->
 

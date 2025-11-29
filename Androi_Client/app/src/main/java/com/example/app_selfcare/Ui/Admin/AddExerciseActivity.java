@@ -1,4 +1,4 @@
-package com.example.app_selfcare; // Đổi thành package của bạn
+package com.example.app_selfcare.Ui.Admin; // Đổi thành package của bạn
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.app_selfcare.R;
 
 import java.util.ArrayList;
 import java.util.List;

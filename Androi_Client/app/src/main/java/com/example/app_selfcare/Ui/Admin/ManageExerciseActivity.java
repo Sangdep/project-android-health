@@ -1,9 +1,11 @@
-package com.example.app_selfcare;
+package com.example.app_selfcare.Ui.Admin;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.app_selfcare.R;
 
 public class ManageExerciseActivity extends AppCompatActivity {
 
