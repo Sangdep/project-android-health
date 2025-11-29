@@ -17,3 +17,4 @@ public class FoodSuggestRequestDTO {
     int limit;
 }
 
+
