@@ -15,3 +15,4 @@ public class ExerciseListRequestDTO {
     String difficulty;
 }
 
+

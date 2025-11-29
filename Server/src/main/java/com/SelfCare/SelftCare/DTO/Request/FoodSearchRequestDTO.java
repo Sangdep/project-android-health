@@ -15,3 +15,4 @@ public class FoodSearchRequestDTO {
     String keyword;
 }
 
+
