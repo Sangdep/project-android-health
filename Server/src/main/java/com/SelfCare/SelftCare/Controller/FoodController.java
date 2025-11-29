@@ -3,6 +3,7 @@ package com.SelfCare.SelftCare.Controller;
 import com.SelfCare.SelftCare.DTO.ApiResponse;
 import com.SelfCare.SelftCare.DTO.Request.CreateFoodRequest;
 import com.SelfCare.SelftCare.DTO.Response.FoodCreateResponse;
+import com.SelfCare.SelftCare.Enum.MealType;
 import com.SelfCare.SelftCare.Service.FoodService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/foods")
@@ -36,6 +38,27 @@ public class FoodController {
                 .message("Tạo món ăn thành công")
                 .build();
     }
+
+
+    @GetMapping("/meal/{mealType}")
+    ApiResponse<List<FoodCreateResponse>> getFoodsByMealType(@PathVariable MealType mealType)  {
+        return ApiResponse.<List<FoodCreateResponse>>builder()
+                .result(foodService.getFoodsByMealType(mealType))
+                .message("get meal success")
+
+                .build();
+    }
+
+    @GetMapping("/all")
+    ApiResponse<List<FoodCreateResponse>> getAllFoods()  {
+        return ApiResponse.<List<FoodCreateResponse>>builder()
+                .message("get all foods success")
+                .result(foodService.getAllFoods())
+                .build();
+    }
+
+
+
 
 }
 
